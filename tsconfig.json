@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["dom", "es6", "scripthost"],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "outDir": "./dist",
+    "plugins": [
+      {"name": "tslint-language-service"}
+    ],
+    "rootDir": "src",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": [
+    "postcss.config.js",
+    "dist/",
+    "node_modules/",
+    "webpack/"
+  ],
+  "types": [
+    "typePatches"
+  ]
+}
+

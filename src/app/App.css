@@ -1,0 +1,11 @@
+.title {
+  color: gray;
+  font-family: Courier;
+  text-align: center;
+  opacity: .9;
+}
+
+::placeholder {
+  color: gray;
+}
+

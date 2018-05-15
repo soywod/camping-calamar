@@ -1,0 +1,6 @@
+{
+  "extends": "soywod-tslint-rules",
+  "rules": {
+    "eofline": true
+  }
+}
