@@ -1,0 +1,40 @@
+@import '../colors'
+
+a
+  text-decoration: none
+
+.navbar
+  background: #ffffff
+  bottom: 0
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  left: 0
+  padding: 40px
+  position: fixed
+  top: 0
+  width: 320px
+
+  & > *
+    width: 100%
+
+.navbar-logo
+  padding-top: 30px
+
+.navbar-menu-item
+  box-sizing: border-box
+  display: inline-block
+  margin: 10px 0
+  padding: 15px 0
+  width: 100%
+  color: $primary
+  transition: color 100ms linear
+
+  &:hover
+    color: $secondary
+
+.navbar-lang
+  display: flex
+  justify-content: center
+  padding-bottom: 60px
+  

@@ -1,13 +1,9 @@
 import React, {StatelessComponent} from "react"
 
-const styles = require("./App.css")
+import Navbar from "./navbar/Navbar"
 
-interface IProps {
-  title: string
-}
-
-const App: StatelessComponent<IProps> = (props) => (
-  <h1 className={styles.title}>{props.title}</h1>
+const App: StatelessComponent<{}> = (props) => (
+  <Navbar />
 )
 
 export default App
