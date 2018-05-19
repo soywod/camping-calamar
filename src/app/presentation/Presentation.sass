@@ -1,0 +1,86 @@
+@import "../colors"
+
+.plan
+  background: #5bcc40
+  height: 100vh
+  width: 100%
+
+.tile-container
+  display: flex
+  height: 600px
+  width: 100%
+
+%tile
+  flex: 1 1 50%
+
+%tile-title
+  font-size: 36px
+  margin: 20px 0 45px 0
+  text-align: center
+
+%tile-text
+  @extend %tile
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 80px
+
+  .tile-title
+    @extend %tile-title
+
+.tile-media
+  @extend %tile
+
+  &>*
+    width: 100%
+
+.tile-text-blue
+  @extend %tile-text
+
+  .tile-title
+    color: $blue1
+
+.tile-text-teal
+  @extend %tile-text
+
+  .tile-title
+    color: $teal
+
+  p, span
+    color: $black
+
+.tile-text-teal-inverted
+  @extend %tile-text
+  background: $teal
+
+  .tile-title
+    color: $white
+
+  p, span
+    color: $white
+
+%tile-icons
+  align-items: center
+  display: flex
+  width: 100%
+
+  span
+    font-size: 15px
+    line-height: 16px
+    margin: 20px
+    text-align: center
+
+.tile-icons
+  @extend %tile-icons
+
+.tile-labels
+  @extend %tile-icons
+  margin-bottom: 30px
+
+.tile-icon
+  align-items: center
+  display: flex
+  flex: 1
+  flex-direction: column
+  justify-content: center
+

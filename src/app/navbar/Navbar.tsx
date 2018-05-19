@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import {BrowserRouter, Link, Route} from "react-router-dom"
 
+import Presentation from "../presentation/Presentation"
+
 const logo = require("../../static/images/logo-camping-calamar.png")
 const logoPresentationOn = require("../../static/images/logo-presentation-on.png")
 const logoPresentationOff = require("../../static/images/logo-presentation-off.png")
@@ -89,8 +91,9 @@ class NavbarComponent extends Component<{}, IState> {
           </nav>
 
           <main className={styles.mainContent}>
-            <Route exact path="/" component={() => <div>TODO</div>} />
+            <Route exact path="/" component={Presentation} />
           </main>
+          coucou
         </div>
       </BrowserRouter>
     )
@@ -101,7 +104,5 @@ class NavbarComponent extends Component<{}, IState> {
     this.setState({isOpen})
   }
 }
-
-// poppins
 
 export default NavbarComponent
