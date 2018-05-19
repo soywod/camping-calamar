@@ -1,9 +1,12 @@
-@import '../colors'
+@import "../colors"
+
+$navSize: 320px
 
 a
   text-decoration: none
 
-.navbar
+.nav
+  align-items: center
   background: #ffffff
   bottom: 0
   display: flex
@@ -13,28 +16,48 @@ a
   padding: 40px
   position: fixed
   top: 0
-  width: 320px
+  width: $navSize
 
-  & > *
-    width: 100%
+.nav-logo
+  box-sizing: content-box
+  padding-top: 20px
 
-.navbar-logo
-  padding-top: 30px
-
-.navbar-menu-item
-  box-sizing: border-box
-  display: inline-block
-  margin: 10px 0
-  padding: 15px 0
-  width: 100%
+.nav-item
+  align-items: center
   color: $primary
-  transition: color 100ms linear
+  display: flex
+  justify-content: flex-start
+  margin: 5px 0
+  padding: 10px 0
+  width: 100%
+
+  .on
+    display: none
 
   &:hover
     color: $secondary
 
-.navbar-lang
+    .on
+      display: inline
+
+    .off
+      display: none
+
+.nav-item-logo
+  display: flex
+  justify-content: center
+  margin: 0 25px 10px 0
+  width: 55px
+
+.nav-lang
   display: flex
   justify-content: center
   padding-bottom: 60px
+
+.nav-lang-item
+  margin: 3px
+  padding: 4px
   
+.main-content
+  margin-left: $navSize
+
