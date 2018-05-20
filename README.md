@@ -1,4 +1,5 @@
-# Camping Calamar front
+# Camping Calamar front [![Build Status](https://travis-ci.org/soywod/camping-calamar-front.svg?branch=master)](https://travis-ci.org/soywod/camping-calamar-front)
+
 ## Prerequisites
 
 [Git](https://git-scm.com/), [Node.js](https://nodejs.org) and [Yarn](https://yarnpkg.com).
