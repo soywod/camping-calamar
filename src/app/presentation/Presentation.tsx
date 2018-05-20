@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from "react"
+import Slider from "react-slick"
 
 const styles = require("./Presentation.sass")
 const sunset = require("../../static/images/presentation/sunset.png")
@@ -14,8 +15,19 @@ const fridge = require("../../static/images/presentation/fridge.png")
 const shower = require("../../static/images/presentation/shower.png")
 const grill = require("../../static/images/presentation/grill.png")
 const area = require("../../static/images/presentation/area.png")
+const left = require("../../static/images/presentation/arrow-left.png")
+const right = require("../../static/images/presentation/arrow-right.png")
 
 class PresentationComponent extends Component<{}, {}> {
+  private sliderSettings = {
+    dots: true,
+    nextArrow: <img src={right} alt="Next slide" />,
+    prevArrow: <img src={left} alt="Next slide" />,
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    speed: 200,
+  }
+
   constructor(props: {}) {
     super(props)
   }
@@ -166,7 +178,28 @@ class PresentationComponent extends Component<{}, {}> {
             </div>
           </div>
         </div>
-        <div className={styles.diapo}></div>
+        <div className={styles.diapo}>
+          <Slider {...this.sliderSettings}>
+            <div>
+              <h3>1</h3>
+            </div>
+            <div>
+              <h3>2</h3>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
+            <div>
+              <h3>4</h3>
+            </div>
+            <div>
+              <h3>5</h3>
+            </div>
+            <div>
+              <h3>6</h3>
+            </div>
+          </Slider>
+        </div>
       </Fragment>
     )
   }
