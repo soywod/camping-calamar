@@ -1,6 +1,8 @@
 import React, {Component, Fragment} from "react"
 import Slider from "react-slick"
 
+import Footer from "../footer/Footer"
+
 const styles = require("./Presentation.sass")
 const sunset = require("../../static/images/presentation/sunset.png")
 const beach = require("../../static/images/presentation/beach.png")
@@ -178,6 +180,7 @@ class PresentationComponent extends Component<{}, {}> {
             </div>
           </div>
         </div>
+
         <div className={styles.diapo}>
           <Slider {...this.sliderSettings}>
             <div>
@@ -200,6 +203,8 @@ class PresentationComponent extends Component<{}, {}> {
             </div>
           </Slider>
         </div>
+
+        <Footer />
       </Fragment>
     )
   }

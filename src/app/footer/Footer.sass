@@ -1,0 +1,46 @@
+@import "../colors"
+
+.footer
+  background: $gray2
+
+.footer-top,
+.footer-bottom
+  padding: 30px 80px
+
+.footer-top
+  display: flex
+  font-size: 14px
+
+.footer-info
+  flex: 1
+
+.footer-nav
+  align-items: center
+  display: flex
+  flex: 2
+  justify-content: center
+
+  a
+    color: $black
+    margin: 0 10px
+
+.footer-title
+  color: $violet
+  text-transform: uppercase
+
+%footer-link
+  color: $black
+  cursor: pointer
+  text-decoration: underline
+
+.footer-url
+  @extend %footer-link
+
+.footer-tel
+  @extend %footer-link
+  color: $violet
+
+.footer-bottom
+  font-size: 12px
+  text-align: center
+
