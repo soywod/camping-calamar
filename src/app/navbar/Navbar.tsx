@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {BrowserRouter, Link, Route} from "react-router-dom"
+import {HashRouter as Router, Link, Route} from "react-router-dom"
 
 import Presentation from "../presentation/Presentation"
 
@@ -36,7 +36,7 @@ class NavbarComponent extends Component<{}, IState> {
 
   public render() {
     return (
-      <BrowserRouter>
+      <Router>
         <div>
           <nav className={styles.nav}>
             <img className={styles.navLogo} src={logo} alt="Camping Calamar logo" />
@@ -95,7 +95,7 @@ class NavbarComponent extends Component<{}, IState> {
           </main>
           coucou
         </div>
-      </BrowserRouter>
+      </Router>
     )
   }
 
