@@ -75,15 +75,32 @@ class TileComponent extends Component<IProps, {}> {
     )
   }
 
-  private renderMedia(props: ITileMedia) {
-    const media = props.media === "image"
-      ? <img src={props.src} alt={props.alt || ""} />
-      : <iframe width="100%" height="100%" src={props.src} />
+  private renderImage(props: ITileMedia) {
+    const style = {
+      background: `url(${props.src}) center center`,
+      backgroundSize: "cover",
+    }
 
     return (
       <Fragment>
+        <div className={styles.tileMedia} style={style} />
+      </Fragment>
+    )
+  }
+
+  private renderMedia(props: ITileMedia) {
+    if (props.media === "video") {
+      return this.renderVideo(props)
+    }
+
+    return this.renderImage(props)
+  }
+
+  private renderVideo(props: ITileMedia) {
+    return (
+      <Fragment>
         <div className={styles.tileMedia}>
-          {media}
+          <iframe width="100%" height="100%" src={props.src} />
         </div>
       </Fragment>
     )
