@@ -53,8 +53,8 @@ class TileComponent extends Component<IProps, {}> {
       ? styles.tileTextTealInverted
       : styles.tileTextTeal
 
-    const icons = props.icons.map((icon) => (
-      <div className={styles.tileIcon}>
+    const icons = props.icons.map((icon, key) => (
+      <div key={key} className={styles.tileIcon}>
         <div className={styles.tileIconImg}>
           <img alt={icon.alt} src={icon.src} />
         </div>

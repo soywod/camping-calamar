@@ -32,7 +32,7 @@ class CarouselComponent extends Component<IProps, {}> {
     return (
       <div className={styles.carousel}>
         <Carousel {...settings}>
-          {this.props.images.map((image) => <img alt={image.alt} src={image.src} />)}
+          {this.props.images.map((image, key) => <img key={key} alt={image.alt} src={image.src} />)}
         </Carousel>
       </div>
     )

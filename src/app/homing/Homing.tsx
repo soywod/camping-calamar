@@ -4,7 +4,7 @@ const styles = require("./Homing.sass")
 const arrow = require("../../static/images/arrow-down.png")
 
 interface IProps {
-  title: string
+  title: string | JSX.Element
   src?: string
 }
 

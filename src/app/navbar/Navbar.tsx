@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {HashRouter as Router, Link, Route} from "react-router-dom"
 
 import Area from "../area/Area"
+import Contact from "../contact/Contact"
 import Presentation from "../presentation/Presentation"
 
 const logo = require("../../static/images/logo-camping-calamar.png")
@@ -95,6 +96,7 @@ class NavbarComponent extends Component<{}, IState> {
             <Route exact path="/" component={Presentation} />
             <Route path="/presentation" component={Presentation} />
             <Route path="/area" component={Area} />
+            <Route path="/contact" component={Contact} />
           </main>
         </div>
       </Router>
