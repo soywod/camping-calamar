@@ -96,7 +96,6 @@ class NavbarComponent extends Component<{}, IState> {
             <Route path="/presentation" component={Presentation} />
             <Route path="/area" component={Area} />
           </main>
-          coucou
         </div>
       </Router>
     )

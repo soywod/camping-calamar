@@ -21,6 +21,7 @@ const fridge = require("../../static/images/presentation/fridge.png")
 const shower = require("../../static/images/presentation/shower.png")
 const grill = require("../../static/images/presentation/grill.png")
 const area = require("../../static/images/presentation/area.png")
+const carouselDemo = require("../../static/images/presentation/carousel-demo.png")
 
 const tileLeftIcons = [
   {alt: "Beach", label: <span>Les pieds<br/>dans l'eau</span>, src: beach},
@@ -38,6 +39,11 @@ const tileRightIcons = [
   {alt: "Shower", label: <span>Douches<br />& Sanitaires</span>, src: shower},
   {alt: "Grill", label: <span>Barbecue<br />en pierre</span>, src: grill},
   {alt: "Wash machine", label: <span>Machines<br />à laver</span>, src: washMachine},
+]
+
+const carouselImages = [
+  {alt: "Carousel demo", src: carouselDemo},
+  {alt: "Carousel demo", src: carouselDemo},
 ]
 
 class PresentationComponent extends Component<{}, {}> {
@@ -83,7 +89,7 @@ class PresentationComponent extends Component<{}, {}> {
           <Tile type="icons" title="Commodités" icons={tileRightIcons} />
         </TilePair>
 
-        <Carousel />
+        <Carousel images={carouselImages} />
 
         <Footer />
       </Fragment>

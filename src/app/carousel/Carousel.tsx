@@ -1,4 +1,5 @@
-import React, {Component} from "react"
+import map from "lodash.map"
+import React, {Component, ReactNode} from "react"
 import Carousel from "react-slick"
 
 const styles = require("./Carousel.sass")
@@ -14,8 +15,17 @@ const settings = {
   speed: 200,
 }
 
-class CarouselComponent extends Component<{}, {}> {
-  constructor(props: {}) {
+interface IImage {
+  alt: string
+  src: string
+}
+
+interface IProps {
+  images: IImage[]
+}
+
+class CarouselComponent extends Component<IProps, {}> {
+  constructor(props: IProps) {
     super(props)
   }
 
@@ -23,12 +33,7 @@ class CarouselComponent extends Component<{}, {}> {
     return (
       <div className={styles.carousel}>
         <Carousel {...settings}>
-          <div><h3>1</h3></div>
-          <div><h3>2</h3></div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
-          <div><h3>5</h3></div>
-          <div><h3>6</h3></div>
+          {this.props.images.map((image) => <img alt={image.alt} src={image.src} />)}
         </Carousel>
       </div>
     )
