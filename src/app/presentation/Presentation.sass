@@ -10,55 +10,6 @@
   height: 600px
   width: 100%
 
-%tile
-  flex: 1 1 50%
-
-%tile-title
-  font-size: 36px
-  margin: 20px 0 45px 0
-  text-align: center
-
-%tile-text
-  @extend %tile
-  display: flex
-  flex-direction: column
-  justify-content: center
-  padding: 80px
-
-  .tile-title
-    @extend %tile-title
-
-.tile-media
-  @extend %tile
-
-  &>*
-    width: 100%
-
-.tile-text-blue
-  @extend %tile-text
-
-  .tile-title
-    color: $blue1
-
-.tile-text-teal
-  @extend %tile-text
-
-  .tile-title
-    color: $teal
-
-  p, span
-    color: $black
-
-.tile-text-teal-inverted
-  @extend %tile-text
-  background: $teal
-
-  .tile-title
-    color: $white
-
-  p, span
-    color: $white
-
 .diapo
   margin-bottom: 30px
 
