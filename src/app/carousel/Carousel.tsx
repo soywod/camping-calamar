@@ -1,4 +1,3 @@
-import map from "lodash.map"
 import React, {Component, ReactNode} from "react"
 import Carousel from "react-slick"
 
