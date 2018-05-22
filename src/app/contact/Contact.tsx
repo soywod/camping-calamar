@@ -2,7 +2,7 @@ import React, {Component} from "react"
 
 import Footer from "../footer/Footer"
 import Homing from "../homing/Homing"
-import GoogleMap from "./GoogleMap"
+import GoogleMap, {getGoogleMapURL} from "./GoogleMap"
 
 const styles = require("./Contact.sass")
 const header = require("../../static/images/contact/header.png")
@@ -47,7 +47,7 @@ class ContactComponent extends Component<{}, {}> {
         </div>
 
         <GoogleMap
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+          googleMapURL={getGoogleMapURL()}
           loadingElement={<div style={{height: "100%"}} />}
           containerElement={<div style={{height: "600px"}} />}
           mapElement={<div style={{height: "100%"}} />}

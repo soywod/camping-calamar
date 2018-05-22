@@ -12,4 +12,13 @@ const GoogleMapComponent = withScriptjs(withGoogleMap((props) => (
   </GoogleMap>
 )))
 
+function getGoogleMapURL() {
+  const apiKey = "AIzaSyCmss3qELP65PTTFuG8zcePWgkRvvVi8ck"
+  const baseURL = "https://maps.googleapis.com/maps/api/js"
+  const params = `key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`
+
+  return `${baseURL}?${params}`
+}
+
 export default GoogleMapComponent
+export {getGoogleMapURL}
