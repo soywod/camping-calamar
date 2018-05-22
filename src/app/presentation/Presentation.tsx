@@ -2,6 +2,7 @@ import React, {Component, Fragment} from "react"
 import Slider from "react-slick"
 
 import Footer from "../footer/Footer"
+import Tile from "../tile/Tile"
 
 const styles = require("./Presentation.sass")
 const sunset = require("../../static/images/presentation/sunset.png")
@@ -20,15 +21,34 @@ const area = require("../../static/images/presentation/area.png")
 const left = require("../../static/images/presentation/arrow-left.png")
 const right = require("../../static/images/presentation/arrow-right.png")
 
+const sliderSettings = {
+  dots: true,
+  nextArrow: <img src={right} alt="Next slide" />,
+  prevArrow: <img src={left} alt="Next slide" />,
+  slidesToScroll: 1,
+  slidesToShow: 1,
+  speed: 200,
+}
+
+const tileLeftIcons = [
+  {alt: "Beach", label: <span>Les pieds<br/>dans l'eau</span>, src: beach},
+  {alt: "Volley", label: <span>Beach<br/>Volley</span>, src: volley},
+  {alt: "Snack", label: <span>Snack<br/>Bar</span>, src: snack},
+  {alt: "Baby foot", label: <span>Baby<br/>foot</span>, src: babyFoot},
+  {alt: "Reading", label: <span>Livres<br/>et BD</span>, src: reading},
+  {alt: "Ping pong", label: <span>Tennis<br/>de table</span>, src: pingPong},
+]
+
+const tileRightIcons = [
+  {alt: "Area", label: <span>Emplacement sous Oliviers<br />& Eucalyptus</span>, src: area},
+  {alt: "Fridge", label: <span>Location<br />de frigos</span>, src: fridge},
+  {alt: "Bakery", label: <span>Boulanger<br />tous les matins</span>, src: bakery},
+  {alt: "Shower", label: <span>Douches<br />& Sanitaires</span>, src: shower},
+  {alt: "Grill", label: <span>Barbecue<br />en pierre</span>, src: grill},
+  {alt: "Wash machine", label: <span>Machines<br />à laver</span>, src: washMachine},
+]
+
 class PresentationComponent extends Component<{}, {}> {
-  private sliderSettings = {
-    dots: true,
-    nextArrow: <img src={right} alt="Next slide" />,
-    prevArrow: <img src={left} alt="Next slide" />,
-    slidesToScroll: 1,
-    slidesToShow: 1,
-    speed: 200,
-  }
 
   constructor(props: {}) {
     super(props)
@@ -38,174 +58,68 @@ class PresentationComponent extends Component<{}, {}> {
     return (
       <Fragment>
         <div className={styles.plan}></div>
-        <div className={styles.tileContainer}>
-          <div className={styles.tileMedia}>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
-          </div>
-          <div className={styles.tileTextBlue}>
-            <h2 className={styles.tileTitle}>Le Camping en vidéo</h2>
-
-            <p>"Emplacement 17" est un clip crée par l'un de nos fidèles campeurs en hommage au camping Calamar.</p>
-
-            <p>
-              Tous les campeurs présents cet été là se sont prêtés au jeu de la figuration
-              pour donner vie à cette formidable "comédie musicale".
-            </p>
-
-            <p>Un très bon moyen de saisir l'ambiance sous les Oliviers...</p>
-          </div>
-        </div>
-        <div className={styles.tileContainer}>
-          <div className={styles.tileTextBlue}>
-            <h2 className={styles.tileTitle}>Le camping en 3 mots...</h2>
-
-            <p>
-              Situé sur la côte orientale de la Corse à 50 km au sud de Bastia, au coeur de la Costa Verde,
-              le camping Calamar vous accueille dans une ambiance familiale.
-            </p>
-
-            <p>Sa situation en fait un point de départ idéal pour des excursions à la journée dans toute la Corse.</p>
-
-            <p>
-              Idéalement placé, "les pieds dans l'eau", au bord d'une plage de sable,
-              dans un cadre verdoyant et ombragé. vous aurez la possibilité de choisir votre emplacement
-              sous des oliviers ou des eucalyptus. Un barbecue vous permettra de
-            </p>
-          </div>
-          <div className={styles.tileMedia}>
-            <img src={sunset} alt="Drawing camping" />
-          </div>
-        </div>
-        <div className={styles.tileContainer}>
-          <div className={styles.tileTextTealInverted}>
-            <h2 className={styles.tileTitle}>Loisirs</h2>
-
-            <div className={styles.tileIcons}>
-              <div className={styles.tileIcon}>
-                <img src={beach} alt="Beach icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={volley} alt="Volley icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={snack} alt="Snack icon" />
-              </div>
-            </div>
-
-            <div className={styles.tileLabels}>
-              <div className={styles.tileIcon}>
-                <span>Les pieds<br />dans l'eau</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Beach<br />Volley</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Snack<br />bar</span>
-              </div>
-            </div>
-
-            <div className={styles.tileIcons}>
-              <div className={styles.tileIcon}>
-                <img src={babyFoot} alt="Baby-foot icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={reading} alt="Reading icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={pingPong} alt="Ping pong icon" />
-              </div>
-            </div>
-
-            <div className={styles.tileLabels}>
-              <div className={styles.tileIcon}>
-                <span>Baby<br />foot</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Livres<br />et BD</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Tennis<br />de table</span>
-              </div>
-            </div>
-          </div>
-          <div className={styles.tileTextTeal}>
-            <h2 className={styles.tileTitle}>Commodités</h2>
-
-            <div className={styles.tileIcons}>
-              <div className={styles.tileIcon}>
-                <img src={area} alt="Area icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={fridge} alt="Fridge icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={bakery} alt="Bakery icon" />
-              </div>
-            </div>
-
-            <div className={styles.tileLabels}>
-              <div className={styles.tileIcon}>
-                <span>Emplacement sous Oliviers<br />& Eucalyptus</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Location<br />de frigos</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Boulanger<br />tous les matins</span>
-              </div>
-            </div>
-
-            <div className={styles.tileIcons}>
-              <div className={styles.tileIcon}>
-                <img src={shower} alt="Shower icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={grill} alt="Grill icon" />
-              </div>
-              <div className={styles.tileIcon}>
-                <img src={washMachine} alt="Wash machine icon" />
-              </div>
-            </div>
-
-            <div className={styles.tileLabels}>
-              <div className={styles.tileIcon}>
-                <span>Douches<br />& Sanitaires</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Barbecue<br />en pierre</span>
-              </div>
-              <div className={styles.tileIcon}>
-                <span>Machines<br />à laver</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {this.renderTileGroup1()}
+        {this.renderTileGroup2()}
+        {this.renderTileGroup3()}
 
         <div className={styles.diapo}>
-          <Slider {...this.sliderSettings}>
-            <div>
-              <h3>1</h3>
-            </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
+          <Slider {...sliderSettings}>
+            <div><h3>1</h3></div>
+            <div><h3>2</h3></div>
+            <div><h3>3</h3></div>
+            <div><h3>4</h3></div>
+            <div><h3>5</h3></div>
+            <div><h3>6</h3></div>
           </Slider>
         </div>
 
         <Footer />
       </Fragment>
+    )
+  }
+
+  private renderTileGroup1() {
+    return (
+      <div className={styles.tileContainer}>
+        <Tile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
+        <Tile title="Le Camping en vidéo">
+          <p>"Emplacement 17" est un clip crée par l'un de nos fidèles campeurs en hommage au camping Calamar.</p>
+          <p>
+            Tous les campeurs présents cet été là se sont prêtés au jeu de la figuration
+            pour donner vie à cette formidable "comédie musicale".
+          </p>
+          <p>Un très bon moyen de saisir l'ambiance sous les Oliviers...</p>
+        </Tile>
+      </div>
+    )
+  }
+
+  private renderTileGroup2() {
+    return (
+      <div className={styles.tileContainer}>
+        <Tile title="Le camping en 3 mots...">
+          <p>
+            Situé sur la côte orientale de la Corse à 50 km au sud de Bastia, au coeur de la Costa Verde,
+            le camping Calamar vous accueille dans une ambiance familiale.
+          </p>
+          <p>Sa situation en fait un point de départ idéal pour des excursions à la journée dans toute la Corse.</p>
+          <p>
+            Idéalement placé, "les pieds dans l'eau", au bord d'une plage de sable,
+            dans un cadre verdoyant et ombragé. vous aurez la possibilité de choisir votre emplacement
+            sous des oliviers ou des eucalyptus. Un barbecue vous permettra de
+          </p>
+        </Tile>
+        <Tile type="media" media="image" alt="Camping sunset" src={sunset} />
+      </div>
+    )
+  }
+
+  private renderTileGroup3() {
+    return (
+      <div className={styles.tileContainer}>
+        <Tile inverted type="icons" title="Loisirs" icons={tileLeftIcons} />
+        <Tile type="icons" title="Commodités" icons={tileRightIcons} />
+      </div>
     )
   }
 }
