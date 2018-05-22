@@ -2,6 +2,7 @@ import React, {Component, Fragment} from "react"
 import Slider from "react-slick"
 
 import Footer from "../footer/Footer"
+import TilePair from "../tile-pair/TilePair"
 import Tile from "../tile/Tile"
 
 const styles = require("./Presentation.sass")
@@ -58,9 +59,39 @@ class PresentationComponent extends Component<{}, {}> {
     return (
       <Fragment>
         <div className={styles.plan}></div>
-        {this.renderTileGroup1()}
-        {this.renderTileGroup2()}
-        {this.renderTileGroup3()}
+
+        <TilePair>
+          <Tile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
+          <Tile title="Le Camping en vidéo">
+            <p>"Emplacement 17" est un clip crée par l'un de nos fidèles campeurs en hommage au camping Calamar.</p>
+            <p>
+              Tous les campeurs présents cet été là se sont prêtés au jeu de la figuration
+              pour donner vie à cette formidable "comédie musicale".
+            </p>
+            <p>Un très bon moyen de saisir l'ambiance sous les Oliviers...</p>
+          </Tile>
+        </TilePair>
+
+        <TilePair>
+          <Tile title="Le camping en 3 mots...">
+            <p>
+              Situé sur la côte orientale de la Corse à 50 km au sud de Bastia, au coeur de la Costa Verde,
+              le camping Calamar vous accueille dans une ambiance familiale.
+            </p>
+            <p>Sa situation en fait un point de départ idéal pour des excursions à la journée dans toute la Corse.</p>
+            <p>
+              Idéalement placé, "les pieds dans l'eau", au bord d'une plage de sable,
+              dans un cadre verdoyant et ombragé. vous aurez la possibilité de choisir votre emplacement
+              sous des oliviers ou des eucalyptus. Un barbecue vous permettra de
+            </p>
+          </Tile>
+          <Tile type="media" media="image" alt="Camping sunset" src={sunset} />
+        </TilePair>
+
+        <TilePair>
+          <Tile inverted type="icons" title="Loisirs" icons={tileLeftIcons} />
+          <Tile type="icons" title="Commodités" icons={tileRightIcons} />
+        </TilePair>
 
         <div className={styles.diapo}>
           <Slider {...sliderSettings}>
@@ -75,51 +106,6 @@ class PresentationComponent extends Component<{}, {}> {
 
         <Footer />
       </Fragment>
-    )
-  }
-
-  private renderTileGroup1() {
-    return (
-      <div className={styles.tileContainer}>
-        <Tile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
-        <Tile title="Le Camping en vidéo">
-          <p>"Emplacement 17" est un clip crée par l'un de nos fidèles campeurs en hommage au camping Calamar.</p>
-          <p>
-            Tous les campeurs présents cet été là se sont prêtés au jeu de la figuration
-            pour donner vie à cette formidable "comédie musicale".
-          </p>
-          <p>Un très bon moyen de saisir l'ambiance sous les Oliviers...</p>
-        </Tile>
-      </div>
-    )
-  }
-
-  private renderTileGroup2() {
-    return (
-      <div className={styles.tileContainer}>
-        <Tile title="Le camping en 3 mots...">
-          <p>
-            Situé sur la côte orientale de la Corse à 50 km au sud de Bastia, au coeur de la Costa Verde,
-            le camping Calamar vous accueille dans une ambiance familiale.
-          </p>
-          <p>Sa situation en fait un point de départ idéal pour des excursions à la journée dans toute la Corse.</p>
-          <p>
-            Idéalement placé, "les pieds dans l'eau", au bord d'une plage de sable,
-            dans un cadre verdoyant et ombragé. vous aurez la possibilité de choisir votre emplacement
-            sous des oliviers ou des eucalyptus. Un barbecue vous permettra de
-          </p>
-        </Tile>
-        <Tile type="media" media="image" alt="Camping sunset" src={sunset} />
-      </div>
-    )
-  }
-
-  private renderTileGroup3() {
-    return (
-      <div className={styles.tileContainer}>
-        <Tile inverted type="icons" title="Loisirs" icons={tileLeftIcons} />
-        <Tile type="icons" title="Commodités" icons={tileRightIcons} />
-      </div>
     )
   }
 }
