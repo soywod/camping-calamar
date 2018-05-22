@@ -20,8 +20,8 @@ const production = {
         use: [
           ExtractPlugin.loader,
           "css-loader?modules&camelCase&minimize",
-          "sass-loader",
           "postcss-loader",
+          "sass-loader",
         ],
       },
     ],
