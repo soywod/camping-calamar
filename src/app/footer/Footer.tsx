@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from "react"
+import {Link} from "react-router-dom"
 
 const styles = require("./Footer.sass")
 
@@ -29,16 +30,16 @@ class FooterComponent extends Component<{}, {}> {
           </article>
 
           <article className={styles.footerNav}>
-            <a href="#">Présentation</a>-
-            <a href="">Infos & tarifs</a>-
-            <a href="">Réservation</a>-
-            <a href="">Alentours</a>-
-            <a href="">Contact</a>
+            <Link to="/presentation">Présentation</Link>-
+            <Link to="/prices">Infos & tarifs</Link>-
+            <Link to="/booking">Réservation</Link>-
+            <Link to="/area">Alentours</Link>-
+            <Link to="/contact">Contact</Link>
           </article>
         </div>
 
         <div className={styles.footerBottom}>
-          Design & anim : Olivier DIAMANT www.dogms.com / Développement : Clément DOUIN
+          Design & anim : Olivier DIAMANT <a href="www.dogms.com">www.dogms.com</a> / Développement : Clément DOUIN
         </div>
       </footer>
     )

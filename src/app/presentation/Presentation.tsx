@@ -1,5 +1,4 @@
 import React, {Component, Fragment} from "react"
-import Slider from "react-slick"
 
 import Carousel from "../carousel/Carousel"
 import Footer from "../footer/Footer"
@@ -8,6 +7,7 @@ import TilePair from "../tile-pair/TilePair"
 import Tile from "../tile/Tile"
 
 const styles = require("./Presentation.sass")
+const header = require("../../static/images/presentation/header.png")
 const sunset = require("../../static/images/presentation/sunset.png")
 const beach = require("../../static/images/presentation/beach.png")
 const pingPong = require("../../static/images/presentation/ping-pong.png")
@@ -48,7 +48,7 @@ class PresentationComponent extends Component<{}, {}> {
   public render() {
     return (
       <Fragment>
-        <Homing title="Présentation" />
+        <Homing src={header} title="Présentation" />
 
         <TilePair>
           <Tile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />

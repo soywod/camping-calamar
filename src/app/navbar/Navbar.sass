@@ -2,9 +2,6 @@
 
 $navSize: 320px
 
-a
-  text-decoration: none
-
 .nav
   align-items: center
   background: #ffffff
@@ -24,18 +21,21 @@ a
 
 .nav-item
   align-items: center
-  color: $gray
   display: flex
   justify-content: flex-start
   margin: 5px 0
-  padding: 10px 0
+  padding: 10px
   width: 100%
+
+  *
+    color: $gray
 
   .on
     display: none
 
   &:hover
-    color: $blue1
+    *
+      color: $blue1
 
     .on
       display: inline

@@ -13,7 +13,7 @@ interface ITileIcon {
 interface ITileIcons {
   icons: ITileIcon[]
   inverted?: true
-  title: string
+  title: string | JSX.Element
   type: "icons"
 }
 
@@ -27,7 +27,7 @@ interface ITileMedia {
 interface ITileText {
   inverted?: true
   secondary?: true
-  title: string
+  title: string | JSX.Element
   type?: "text"
 }
 

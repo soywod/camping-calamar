@@ -5,7 +5,7 @@ const arrow = require("../../static/images/arrow-down.png")
 
 interface IProps {
   title: string
-  image?: string
+  src?: string
 }
 
 class HomingComponent extends Component<IProps, {}> {
@@ -14,9 +14,9 @@ class HomingComponent extends Component<IProps, {}> {
   }
 
   public render() {
-    const style = this.props.image
+    const style = this.props.src
       ?  {
-        background: `url(${this.props.image}) center center`,
+        background: `url(${this.props.src}) center center`,
         backgroundSize: "cover",
       }
       : {}

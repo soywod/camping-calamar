@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import {HashRouter as Router, Link, Route} from "react-router-dom"
 
+import Area from "../area/Area"
 import Presentation from "../presentation/Presentation"
 
 const logo = require("../../static/images/logo-camping-calamar.png")
@@ -42,45 +43,45 @@ class NavbarComponent extends Component<{}, IState> {
             <img className={styles.navLogo} src={logo} alt="Camping Calamar logo" />
 
             <div>
-              <a href="/presentation" className={styles.navItem}>
+              <Link to="/presentation" className={styles.navItem}>
                 <div className={styles.navItemLogo}>
                   <img className={styles.on} src={logoPresentationOn} alt="Presentation icon" />
                   <img className={styles.off} src={logoPresentationOff} alt="Presentation icon" />
                 </div>
                 <span>Présentation</span>
-              </a>
+              </Link>
 
-              <a href="/pricing" className={styles.navItem}>
+              <Link to="/pricing" className={styles.navItem}>
                 <div className={styles.navItemLogo}>
                   <img className={styles.on} src={logoPricingOn} alt="Pricing icon" />
                   <img className={styles.off} src={logoPricingOff} alt="Pricing icon" />
                 </div>
                 <span>Infos & tarifs</span>
-              </a>
+              </Link>
 
-              <a href="/booking" className={styles.navItem}>
+              <Link to="/booking" className={styles.navItem}>
                 <div className={styles.navItemLogo}>
                   <img className={styles.on} src={logoBookingOff} alt="Booking icon" />
                   <img className={styles.off} src={logoBookingOff} alt="Booking icon" />
                 </div>
                 <span>Réservation</span>
-              </a>
+              </Link>
 
-              <a href="/area" className={styles.navItem}>
+              <Link to="/area" className={styles.navItem}>
                 <div className={styles.navItemLogo}>
                   <img className={styles.on} src={logoAreaOn} alt="Area icon" />
                   <img className={styles.off} src={logoAreaOff} alt="Area icon" />
                 </div>
                 <span>Alentours</span>
-              </a>
+              </Link>
 
-              <a href="/contact" className={styles.navItem}>
+              <Link to="/contact" className={styles.navItem}>
                 <div className={styles.navItemLogo}>
                   <img className={styles.on} src={logoContactOn} alt="Contact icon" />
                   <img className={styles.off} src={logoContactOff} alt="Contact icon" />
                 </div>
                 <span>Contact/plan</span>
-              </a>
+              </Link>
             </div>
 
             <div className={styles.navLang}>
@@ -92,6 +93,8 @@ class NavbarComponent extends Component<{}, IState> {
 
           <main className={styles.mainContent}>
             <Route exact path="/" component={Presentation} />
+            <Route path="/presentation" component={Presentation} />
+            <Route path="/area" component={Area} />
           </main>
           coucou
         </div>
