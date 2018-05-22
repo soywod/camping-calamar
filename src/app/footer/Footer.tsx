@@ -31,7 +31,7 @@ class FooterComponent extends Component<{}, {}> {
 
           <article className={styles.footerNav}>
             <Link to="/presentation">Présentation</Link>-
-            <Link to="/prices">Infos & tarifs</Link>-
+            <Link to="/pricing">Infos & tarifs</Link>-
             <Link to="/booking">Réservation</Link>-
             <Link to="/area">Alentours</Link>-
             <Link to="/contact">Contact</Link>
