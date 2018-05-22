@@ -1,7 +1,9 @@
 import React, {Component, Fragment} from "react"
 import Slider from "react-slick"
 
+import Carousel from "../carousel/Carousel"
 import Footer from "../footer/Footer"
+import Homing from "../homing/Homing"
 import TilePair from "../tile-pair/TilePair"
 import Tile from "../tile/Tile"
 
@@ -19,17 +21,6 @@ const fridge = require("../../static/images/presentation/fridge.png")
 const shower = require("../../static/images/presentation/shower.png")
 const grill = require("../../static/images/presentation/grill.png")
 const area = require("../../static/images/presentation/area.png")
-const left = require("../../static/images/presentation/arrow-left.png")
-const right = require("../../static/images/presentation/arrow-right.png")
-
-const sliderSettings = {
-  dots: true,
-  nextArrow: <img src={right} alt="Next slide" />,
-  prevArrow: <img src={left} alt="Next slide" />,
-  slidesToScroll: 1,
-  slidesToShow: 1,
-  speed: 200,
-}
 
 const tileLeftIcons = [
   {alt: "Beach", label: <span>Les pieds<br/>dans l'eau</span>, src: beach},
@@ -50,7 +41,6 @@ const tileRightIcons = [
 ]
 
 class PresentationComponent extends Component<{}, {}> {
-
   constructor(props: {}) {
     super(props)
   }
@@ -58,7 +48,7 @@ class PresentationComponent extends Component<{}, {}> {
   public render() {
     return (
       <Fragment>
-        <div className={styles.plan}></div>
+        <Homing title="Présentation" />
 
         <TilePair>
           <Tile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
@@ -93,16 +83,7 @@ class PresentationComponent extends Component<{}, {}> {
           <Tile type="icons" title="Commodités" icons={tileRightIcons} />
         </TilePair>
 
-        <div className={styles.diapo}>
-          <Slider {...sliderSettings}>
-            <div><h3>1</h3></div>
-            <div><h3>2</h3></div>
-            <div><h3>3</h3></div>
-            <div><h3>4</h3></div>
-            <div><h3>5</h3></div>
-            <div><h3>6</h3></div>
-          </Slider>
-        </div>
+        <Carousel />
 
         <Footer />
       </Fragment>

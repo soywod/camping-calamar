@@ -1,0 +1,26 @@
+@import "../colors"
+
+.homing
+  background: $black
+  height: 100vh
+  position: relative
+  width: 100%
+
+%homing-element
+  color: $white
+  display: flex
+  height: 100%
+  position: absolute
+  width: 100%
+
+.homing-title
+  @extend %homing-element
+  align-items: center
+  margin-left: 64px
+
+.homing-arrow
+  @extend %homing-element
+  align-items: flex-end
+  justify-content: center
+  padding-bottom: 32px
+

@@ -1,6 +1,4 @@
-import React, {Component, ReactElement} from "react"
-
-import Tile from "../tile/Tile"
+import React, {Component} from "react"
 
 const styles = require("./TilePair.sass")
 
