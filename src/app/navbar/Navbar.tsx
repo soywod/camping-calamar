@@ -45,45 +45,75 @@ class NavbarComponent extends Component<{}, IState> {
             <img className={styles.navLogo} src={logo} alt="Camping Calamar logo" />
 
             <div>
-              <Link to="/presentation" className={styles.navItem}>
-                <div className={styles.navItemLogo}>
-                  <img className={styles.on} src={logoPresentationOn} alt="Presentation icon" />
-                  <img className={styles.off} src={logoPresentationOff} alt="Presentation icon" />
-                </div>
-                <span>Présentation</span>
-              </Link>
+              <Route
+                exact
+                path="/presentation"
+                children={({match}) => (
+                  <Link to="/presentation" className={styles.navItem} data-match={!!match}>
+                    <div className={styles.navItemLogo}>
+                      <img className={styles.on} src={logoPresentationOn} alt="Presentation icon" />
+                      <img className={styles.off} src={logoPresentationOff} alt="Presentation icon" />
+                    </div>
+                    <span>Présentation</span>
+                  </Link>
+                )}
+              />
 
-              <Link to="/pricing" className={styles.navItem}>
-                <div className={styles.navItemLogo}>
-                  <img className={styles.on} src={logoPricingOn} alt="Pricing icon" />
-                  <img className={styles.off} src={logoPricingOff} alt="Pricing icon" />
-                </div>
-                <span>Infos & tarifs</span>
-              </Link>
+              <Route
+                exact
+                path="/pricing"
+                children={({match}) => (
+                  <Link to="/pricing" className={styles.navItem} data-match={!!match}>
+                    <div className={styles.navItemLogo}>
+                      <img className={styles.on} src={logoPricingOn} alt="Pricing icon" />
+                      <img className={styles.off} src={logoPricingOff} alt="Pricing icon" />
+                    </div>
+                    <span>Infos & tarifs</span>
+                  </Link>
+                )}
+              />
 
-              <Link to="/booking" className={styles.navItem}>
-                <div className={styles.navItemLogo}>
-                  <img className={styles.on} src={logoBookingOff} alt="Booking icon" />
-                  <img className={styles.off} src={logoBookingOff} alt="Booking icon" />
-                </div>
-                <span>Réservation</span>
-              </Link>
+              <Route
+                exact
+                path="/booking"
+                children={({match}) => (
+                  <Link to="/booking" className={styles.navItem} data-match={!!match}>
+                    <div className={styles.navItemLogo}>
+                      <img className={styles.on} src={logoBookingOff} alt="Booking icon" />
+                      <img className={styles.off} src={logoBookingOff} alt="Booking icon" />
+                    </div>
+                    <span>Réservation</span>
+                  </Link>
+                )}
+              />
 
-              <Link to="/area" className={styles.navItem}>
-                <div className={styles.navItemLogo}>
-                  <img className={styles.on} src={logoAreaOn} alt="Area icon" />
-                  <img className={styles.off} src={logoAreaOff} alt="Area icon" />
-                </div>
-                <span>Alentours</span>
-              </Link>
+              <Route
+                exact
+                path="/area"
+                children={({match}) => (
+                  <Link to="/area" className={styles.navItem} data-match={!!match}>
+                    <div className={styles.navItemLogo}>
+                      <img className={styles.on} src={logoAreaOn} alt="Area icon" />
+                      <img className={styles.off} src={logoAreaOff} alt="Area icon" />
+                    </div>
+                    <span>Alentours</span>
+                  </Link>
+                )}
+              />
 
-              <Link to="/contact" className={styles.navItem}>
-                <div className={styles.navItemLogo}>
-                  <img className={styles.on} src={logoContactOn} alt="Contact icon" />
-                  <img className={styles.off} src={logoContactOff} alt="Contact icon" />
-                </div>
-                <span>Contact/plan</span>
-              </Link>
+              <Route
+                exact
+                path="/contact"
+                children={({match}) => (
+                  <Link to="/contact" className={styles.navItem} data-match={!!match}>
+                    <div className={styles.navItemLogo}>
+                      <img className={styles.on} src={logoContactOn} alt="Contact icon" />
+                      <img className={styles.off} src={logoContactOff} alt="Contact icon" />
+                    </div>
+                    <span>Contact/plan</span>
+                  </Link>
+                )}
+              />
             </div>
 
             <div className={styles.navLang}>
@@ -94,11 +124,10 @@ class NavbarComponent extends Component<{}, IState> {
           </nav>
 
           <main className={styles.mainContent}>
-            <Route exact path="/" component={Presentation} />
-            <Route path="/presentation" component={Presentation} />
-            <Route path="/booking" component={Booking} />
-            <Route path="/area" component={Area} />
-            <Route path="/contact" component={Contact} />
+            <Route exact path="/presentation" component={Presentation} />
+            <Route exact path="/booking" component={Booking} />
+            <Route exact path="/area" component={Area} />
+            <Route exact path="/contact" component={Contact} />
           </main>
         </div>
       </Router>
