@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {HashRouter as Router, Link, Route} from "react-router-dom"
 
 import Area from "../area/Area"
+import Booking from "../booking/Booking"
 import Contact from "../contact/Contact"
 import Presentation from "../presentation/Presentation"
 
@@ -95,6 +96,7 @@ class NavbarComponent extends Component<{}, IState> {
           <main className={styles.mainContent}>
             <Route exact path="/" component={Presentation} />
             <Route path="/presentation" component={Presentation} />
+            <Route path="/booking" component={Booking} />
             <Route path="/area" component={Area} />
             <Route path="/contact" component={Contact} />
           </main>
