@@ -2,6 +2,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -46,23 +47,5 @@ p {
   height: inherit;
   width: inherit;
   z-index: 1;
-}
-
-.component {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.fade-enter,
-.fade-enter.fade-enter-active {
-  animation: fade 400ms reverse forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
-.fade-exit,
-.fade-exit.fade-exit-active {
-  animation: fade 400ms forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
