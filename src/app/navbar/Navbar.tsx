@@ -25,14 +25,17 @@ const flagIT = require("../../static/images/flag-it.png")
 
 const styles = require("./Navbar.sass")
 
+interface IProps {
+  loaded: boolean
+}
+
 interface IState {
   isOpen: boolean
 }
 
-class NavbarComponent extends Component<{}, IState> {
-  constructor(props: {}) {
+class NavbarComponent extends Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props)
-
     this.state = {
       isOpen: false,
     }
@@ -133,7 +136,7 @@ class NavbarComponent extends Component<{}, IState> {
           </nav>
 
           <main className={styles.mainContent}>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={() => <Home loaded={this.props.loaded} />} />
             <Route exact path="/presentation" component={Presentation} />
             <Route exact path="/booking" component={Booking} />
             <Route exact path="/area" component={Area} />

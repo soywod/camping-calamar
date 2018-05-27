@@ -3,16 +3,20 @@ import React, {Component} from "react"
 declare function init(): any
 
 const styles = require("./Home.sass")
-const loader = require("../../static/images/animation/loader.gif")
+const loader = require("../../static/images/logo-area-off.png")
+
+interface IProps {
+  loaded: boolean
+}
 
 interface IState {
   isFullWidth: boolean
 }
 
-class HomeComponent extends Component<{}, IState> {
+class HomeComponent extends Component<IProps, IState> {
   private animation: HTMLDivElement | null
 
-  constructor(props: {}) {
+  constructor(props: IProps) {
     super(props)
     this.state = {isFullWidth: false}
   }
@@ -39,13 +43,19 @@ class HomeComponent extends Component<{}, IState> {
 
   public componentDidMount() {
     init() // From animation script provided by Adobe
-
     window.addEventListener("resize", this.onWindowResize)
-    this.onWindowResize()
+
+    if (this.props.loaded) {
+      this.onWindowResize()
+    }
+  }
+
+  public componentWillUnmount() {
+    window.removeEventListener("resize", this.onWindowResize)
   }
 
   private onWindowResize = () => {
-    const width = this.animation && (this.animation.offsetWidth - 320) || 0
+    const width = this.animation && (this.animation.offsetWidth) || 0
     const height = window.innerHeight
     const isFullWidth = (width / height > 1.5)
 

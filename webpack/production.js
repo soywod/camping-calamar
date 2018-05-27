@@ -8,10 +8,9 @@ const ExtractPlugin = require('mini-css-extract-plugin')
 const common = require('./common')
 const dist = path.join("..", "dist")
 
-const static = path.join("src", "static")
-const scripts = path.join(static, "scripts")
-const animationSprite = path.join("src", "static", "images", "animation", "sprite.jpg")
-const animationScript = path.join("src", "static", "scripts", "animation.js")
+const baseCSS = path.join("src", "static", "base.css")
+const animationSprite = path.join("src", "static", "animation", "sprite.jpg")
+const animationJS = path.join("src", "static", "animation", "animation.js")
 
 const production = {
   mode: "production",
@@ -38,8 +37,9 @@ const production = {
     ),
     new CopyPlugin([
       {from: "LICENSE", to: dist},
-      {from: animationScript, to: path.join(dist, "scripts")},
-      {from: animationSprite, to: path.join(dist, "images", "animation")},
+      {from: baseCSS, to: dist},
+      {from: animationJS, to: path.join(dist, "animation")},
+      {from: animationSprite, to: path.join(dist, "animation")},
     ]),
     new ExtractPlugin({
       filename: "app.[chunkhash:8].css",
