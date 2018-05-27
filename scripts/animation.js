@@ -2970,7 +2970,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"../images/animation/sprite.jpg", id:"homecamping_atlas_"}
+		{src:"images/animation/sprite.jpg", id:"homecamping_atlas_"}
 	],
 	preloads: []
 };
