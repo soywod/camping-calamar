@@ -1,7 +1,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 a {
@@ -31,7 +31,7 @@ p {
 
 @keyframes fade {
   from { opacity: 1 }
-  to   { opacity: 0 }
+  to   { opacity: 0.01 }
 }
 
 .slick-prev {

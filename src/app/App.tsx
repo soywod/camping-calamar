@@ -44,10 +44,7 @@ class AppComponent extends Component<{}, IState> {
 
         $loader.className = "loaded"
 
-        setTimeout(() => {
-          document.body.removeChild($loader)
-          document.body.style.overflowY = "auto"
-        }, 600)
+        setTimeout(() => document.body.removeChild($loader), 600)
       })
   }
 }
