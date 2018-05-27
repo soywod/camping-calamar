@@ -1,4 +1,4 @@
-import React, {Component, ReactElement} from "react"
+import React, {Component, MouseEvent} from "react"
 
 const styles = require("./Homing.sass")
 const arrow = require("../../static/images/arrow-down.png")
@@ -9,6 +9,8 @@ interface IProps {
 }
 
 class HomingComponent extends Component<IProps, {}> {
+  private container: HTMLDivElement | null
+
   constructor(props: IProps) {
     super(props)
   }
@@ -22,15 +24,20 @@ class HomingComponent extends Component<IProps, {}> {
       : {}
 
     return (
-      <div className={styles.homing} style={style}>
+      <div ref={(ref) => this.container = ref} className={styles.homing} style={style}>
         <h1 className={styles.homingTitle}>{this.props.title}</h1>
         <div className={styles.homingArrow}>
-          <a href="#">
+          <a href="#" onClick={this.scrollDown}>
             <img src={arrow} alt="Bottom arrow" />
           </a>
         </div>
       </div>
     )
+  }
+
+  private scrollDown = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    window.scrollTo(0, this.container && this.container.offsetHeight || 0)
   }
 }
 

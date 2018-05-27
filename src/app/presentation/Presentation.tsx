@@ -56,6 +56,8 @@ class PresentationComponent extends Component<{}, {}> {
       <>
         <Homing src={header} title="Présentation" />
 
+        <div id="content" />
+
         <TilePair>
           <Tile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
           <Tile title="Le Camping en vidéo">
