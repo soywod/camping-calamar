@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from "react"
+import React, {Component} from "react"
 
 import Carousel from "../carousel/Carousel"
 import Footer from "../footer/Footer"
@@ -53,7 +53,7 @@ class PresentationComponent extends Component<{}, {}> {
 
   public render() {
     return (
-      <Fragment>
+      <>
         <Homing src={header} title="Présentation" />
 
         <TilePair>
@@ -92,7 +92,7 @@ class PresentationComponent extends Component<{}, {}> {
         <Carousel images={carouselImages} />
 
         <Footer />
-      </Fragment>
+      </>
     )
   }
 }

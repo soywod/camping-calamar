@@ -20,7 +20,7 @@ const common = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: "file-loader",
+        loader: "file-loader?name=[hash:8].[ext]",
       },
     ],
   },

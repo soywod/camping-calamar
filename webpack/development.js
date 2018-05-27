@@ -9,7 +9,7 @@ const development = {
   devtool: "inline-source-map",
   devServer: {
     hot: true,
-    contentBase: path.join(__dirname, "static"),
+    contentBase: path.join(__dirname, "..", "src", "static"),
   },
   output: {
     filename: "app.js",

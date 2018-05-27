@@ -6,8 +6,13 @@ const CopyPlugin = require('copy-webpack-plugin')
 const ExtractPlugin = require('mini-css-extract-plugin')
 
 const common = require('./common')
-
 const dist = path.join("..", "dist")
+
+const static = path.join("src", "static")
+const scripts = path.join(static, "scripts")
+const animationSprite = path.join("src", "static", "images", "animation", "sprite.jpg")
+const animationScript = path.join("src", "static", "scripts", "animation.js")
+
 const production = {
   mode: "production",
   output: {
@@ -33,6 +38,8 @@ const production = {
     ),
     new CopyPlugin([
       {from: "LICENSE", to: dist},
+      {from: animationScript, to: path.join(dist, "scripts")},
+      {from: animationSprite, to: path.join(dist, "images", "animation")},
     ]),
     new ExtractPlugin({
       filename: "app.[chunkhash:8].css",

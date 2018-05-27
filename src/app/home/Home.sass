@@ -1,0 +1,50 @@
+.animation
+  align-items: center
+  background-color: rgba(255, 255, 255, 1.00)
+  display: flex
+  height: 100vh !important
+  overflow: hidden
+  width: 100% !important
+
+%canvas
+  background-color: rgba(255, 255, 255, 1.00)
+  display: block
+
+.canvas-full-height
+  @extend %canvas
+  height: 100% !important
+  width: auto !important
+
+.canvas-full-width
+  @extend %canvas
+  height: auto !important
+  width: 100% !important
+
+.overlay
+  pointer-events: none
+  overflow: hidden
+  // width: 1620px
+  // height: 1080px
+  // position: absolute
+  left: 0px
+  top: 0px
+  display: none
+
+.loader
+  position: absolute
+  top: 0
+  left: 0
+  display: inline-block
+  height: 1080px
+  width: 1620px
+  text-align: center
+
+  span
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+
+  img
+    vertical-align: middle
+    max-height: 100%   
+

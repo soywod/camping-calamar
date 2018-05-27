@@ -4,6 +4,7 @@ import {HashRouter as Router, Link, Route} from "react-router-dom"
 import Area from "../area/Area"
 import Booking from "../booking/Booking"
 import Contact from "../contact/Contact"
+import Home from "../home/Home"
 import Presentation from "../presentation/Presentation"
 
 const logo = require("../../static/images/logo-camping-calamar.png")
@@ -42,7 +43,15 @@ class NavbarComponent extends Component<{}, IState> {
       <Router>
         <div>
           <nav className={styles.nav}>
-            <img className={styles.navLogo} src={logo} alt="Camping Calamar logo" />
+            <Route
+              exact
+              path="/"
+              children={({match}) => (
+                <Link to="/">
+                  <img className={styles.navLogo} src={logo} alt="Camping Calamar logo" />
+                </Link>
+              )}
+            />
 
             <div>
               <Route
@@ -124,6 +133,7 @@ class NavbarComponent extends Component<{}, IState> {
           </nav>
 
           <main className={styles.mainContent}>
+            <Route exact path="/" component={Home} />
             <Route exact path="/presentation" component={Presentation} />
             <Route exact path="/booking" component={Booking} />
             <Route exact path="/area" component={Area} />
