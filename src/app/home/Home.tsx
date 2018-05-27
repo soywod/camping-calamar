@@ -5,22 +5,28 @@ declare function init(): any
 const styles = require("./Home.sass")
 const loader = require("../../static/images/animation/loader.gif")
 
-class HomeComponent extends Component<{}, {}> {
+interface IState {
+  isFullWidth: boolean
+}
+
+class HomeComponent extends Component<{}, IState> {
+  private animation: HTMLDivElement | null
+
   constructor(props: {}) {
     super(props)
+    this.state = {isFullWidth: false}
   }
 
   public render() {
-    const canvas = ((window.innerWidth - 320) / window.innerHeight > 1.5)
+    const canvas = this.state.isFullWidth
       ? styles.canvasFullWidth
       : styles.canvasFullHeight
 
     return (
       <>
-        <div id="animation_container" className={styles.animation}>
+        <div ref={(ref) => this.animation = ref} id="animation_container" className={styles.animation} >
           <canvas id="canvas" className={canvas}></canvas>
-          <div id="dom_overlay_container" className={styles.overlay}>
-          </div>
+          <div id="dom_overlay_container" className={styles.overlay} />
         </div>
 
         <div id="_preload_div_" className={styles.overlay}>
@@ -32,7 +38,18 @@ class HomeComponent extends Component<{}, {}> {
   }
 
   public componentDidMount() {
-    init()
+    init() // From animation script provided by Adobe
+
+    window.addEventListener("resize", this.onWindowResize)
+    this.onWindowResize()
+  }
+
+  private onWindowResize = () => {
+    const width = this.animation && (this.animation.offsetWidth - 320) || 0
+    const height = window.innerHeight
+    const isFullWidth = (width / height > 1.5)
+
+    this.setState({isFullWidth})
   }
 }
 
