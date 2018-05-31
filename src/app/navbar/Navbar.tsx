@@ -6,6 +6,7 @@ import Booking from "../booking/Booking"
 import Contact from "../contact/Contact"
 import Home from "../home/Home"
 import Presentation from "../presentation/Presentation"
+import Pricing from "../pricing/Pricing"
 import ScrollToTop from "../scroll/ScrollToTop"
 
 const logo = require("../../static/images/logo-camping-calamar.png")
@@ -140,6 +141,7 @@ class NavbarComponent extends Component<IProps, IState> {
             <main className={styles.mainContent}>
               <Route exact path="/" component={() => <Home loaded={this.props.loaded} />} />
               <Route exact path="/presentation" component={Presentation} />
+              <Route exact path="/pricing" component={Pricing} />
               <Route exact path="/booking" component={Booking} />
               <Route exact path="/area" component={Area} />
               <Route exact path="/contact" component={Contact} />
