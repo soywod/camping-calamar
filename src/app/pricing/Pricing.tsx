@@ -32,18 +32,18 @@ class PricingComponent extends Component<{}, {}> {
               <div>Du 15 mai au 10 septembre</div>
             </div>
 
-            <div className={styles.pricingGrid}>
-              <div className={styles.pricingGridRow}>
+            <div className={styles.pricingGridLeft}>
+              <div className={styles.pricingGridRowTeal}>
                 <span className={styles.pricingGridIcon}><img src={adult} alt="Adult pricing" /></span>
                 <span className={styles.pricingGridTitle}>Adulte</span>
                 <span className={styles.pricingGridPrice}>6,10 €/nuitée incl. 0,22 € Taxe de séjour</span>
               </div>
-              <div className={styles.pricingGridRow}>
+              <div className={styles.pricingGridRowTeal}>
                 <span className={styles.pricingGridIcon}><img src={child} alt="Child pricing" /></span>
                 <span className={styles.pricingGridTitle}>Enfant de 2 à 12 ans</span>
                 <span className={styles.pricingGridPrice}>4,50 €/nuitée</span>
               </div>
-              <div className={styles.pricingGridRow}>
+              <div className={styles.pricingGridRowTeal}>
                 <span className={styles.pricingGridIcon}><img src={baby} alt="Baby pricing" /></span>
                 <span className={styles.pricingGridTitle}>Enfant de - de 2 ans</span>
                 <span className={styles.pricingGridPrice}>gratuit</span>
@@ -91,18 +91,18 @@ class PricingComponent extends Component<{}, {}> {
               <div>Du 16 avril au 14 mai/du 11 septembre au 21 octobre</div>
             </div>
 
-            <div className={styles.pricingGrid}>
-              <div className={styles.pricingGridRow}>
+            <div className={styles.pricingGridRight}>
+              <div className={styles.pricingGridRowTeal}>
                 <span className={styles.pricingGridIcon}><img src={adult} alt="Adult pricing" /></span>
                 <span className={styles.pricingGridTitle}>Adulte</span>
                 <span className={styles.pricingGridPrice}>5,80 €/nuitée incl. 0,22 € Taxe de séjour</span>
               </div>
-              <div className={styles.pricingGridRow}>
+              <div className={styles.pricingGridRowTeal}>
                 <span className={styles.pricingGridIcon}><img src={child} alt="Child pricing" /></span>
                 <span className={styles.pricingGridTitle}>Enfant de 2 à 12 ans</span>
                 <span className={styles.pricingGridPrice}>4,10 €/nuitée</span>
               </div>
-              <div className={styles.pricingGridRow}>
+              <div className={styles.pricingGridRowTeal}>
                 <span className={styles.pricingGridIcon}><img src={baby} alt="Baby pricing" /></span>
                 <span className={styles.pricingGridTitle}>Enfant de - de 2 ans</span>
                 <span className={styles.pricingGridPrice}>gratuit</span>

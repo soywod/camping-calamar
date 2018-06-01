@@ -7,15 +7,74 @@
   flex-direction: column
   min-height: 100vh
 
-.pricing-title > *
-  color: $white
-  font-weight: bold
-  margin: 0
-  text-align: center
+  > *
+    font-weight: bold
+
+.pricing-title
+  margin: 20px 0
+
+  > *
+    color: $white
+    margin: 0
+    text-align: center
+
+  > h2
+    font-size: 36px
+
+  > div
+    font-size: 18px
 
 .pricing-column
   display: flex
+  max-width: 1024px
 
-.pricing-grid
-  display: table
+%pricing-grid
+  background: $white
+  display: flex
+  flex-direction: column
+  border-radius: 5px
+
+  &> .pricing-grid-row-teal:first-of-type
+    padding-top: 30px
+    border-radius: 5px 5px 0 0
+
+  &> .pricing-grid-row-teal:nth-of-type(3)
+    padding-bottom: 25px
+
+  &> .pricing-grid-row:nth-of-type(4)
+    padding-top: 25px
+
+  &> .pricing-grid-row:last-of-type
+    padding-bottom: 30px
+
+.pricing-grid-left
+  @extend %pricing-grid
+  margin: 0 40px 0 50px
+
+.pricing-grid-right
+  @extend %pricing-grid
+  margin: 0 50px 0 40px
+
+%pricing-grid-row
+  display: flex
+  padding: 5px 45px
+
+.pricing-grid-row
+  @extend %pricing-grid-row
+
+.pricing-grid-row-teal
+  @extend %pricing-grid-row
+  background: $teal3
+
+.pricing-grid-icon
+  flex-basis: 10%
+
+.pricing-grid-title
+  flex-basis: 40%
+  color: $teal2
+  margin-left: 10px
+
+.pricing-grid-price
+  flex-basis: 50%
+  margin-left: 20px
 
