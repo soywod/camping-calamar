@@ -43,7 +43,7 @@ class NavbarComponent extends Component<{}, IState> {
             exact
             path="/"
             children={() => (
-              <Link to="/" className={styles.logo}>
+              <Link to="/" className={styles.logo} onClick={this.closeNavbar}>
                 <img width="100%" src={logo} alt="Camping Calamar logo" />
               </Link>
             )}
@@ -54,7 +54,7 @@ class NavbarComponent extends Component<{}, IState> {
               exact
               path="/presentation"
               children={({match}) => (
-                <Link to="/presentation" className={styles.item} data-match={!!match}>
+                <Link to="/presentation" className={styles.item} data-match={!!match} onClick={this.closeNavbar}>
                   <div className={styles.itemLogo}>
                     <img className={styles.on} src={logoPresentationOn} alt="Presentation icon" />
                     <img className={styles.off} src={logoPresentationOff} alt="Presentation icon" />
@@ -69,7 +69,7 @@ class NavbarComponent extends Component<{}, IState> {
               exact
               path="/pricing"
               children={({match}) => (
-                <Link to="/pricing" className={styles.item} data-match={!!match}>
+                <Link to="/pricing" className={styles.item} data-match={!!match} onClick={this.closeNavbar}>
                   <div className={styles.itemLogo}>
                     <img className={styles.on} src={logoPricingOn} alt="Pricing icon" />
                     <img className={styles.off} src={logoPricingOff} alt="Pricing icon" />
@@ -83,7 +83,7 @@ class NavbarComponent extends Component<{}, IState> {
               exact
               path="/booking"
               children={({match}) => (
-                <Link to="/booking" className={styles.item} data-match={!!match}>
+                <Link to="/booking" className={styles.item} data-match={!!match} onClick={this.closeNavbar}>
                   <div className={styles.itemLogo}>
                     <img className={styles.on} src={logoBookingOff} alt="Booking icon" />
                     <img className={styles.off} src={logoBookingOff} alt="Booking icon" />
@@ -97,7 +97,7 @@ class NavbarComponent extends Component<{}, IState> {
               exact
               path="/area"
               children={({match}) => (
-                <Link to="/area" className={styles.item} data-match={!!match}>
+                <Link to="/area" className={styles.item} data-match={!!match} onClick={this.closeNavbar}>
                   <div className={styles.itemLogo}>
                     <img className={styles.on} src={logoAreaOn} alt="Area icon" />
                     <img className={styles.off} src={logoAreaOff} alt="Area icon" />
@@ -111,7 +111,7 @@ class NavbarComponent extends Component<{}, IState> {
               exact
               path="/contact"
               children={({match}) => (
-                <Link to="/contact" className={styles.item} data-match={!!match}>
+                <Link to="/contact" className={styles.item} data-match={!!match} onClick={this.closeNavbar}>
                   <div className={styles.itemLogo}>
                     <img className={styles.on} src={logoContactOn} alt="Contact icon" />
                     <img className={styles.off} src={logoContactOff} alt="Contact icon" />
