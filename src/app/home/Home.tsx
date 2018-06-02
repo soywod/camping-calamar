@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 
 declare function init(): any
+declare var createjs: any
 
 const styles = require("./Home.sass")
 const loader = require("../../static/images/logo-area-off.png")
@@ -52,6 +53,7 @@ class HomeComponent extends Component<IProps, IState> {
 
   public componentWillUnmount() {
     window.removeEventListener("resize", this.onWindowResize)
+    createjs.Ticker.reset()
   }
 
   private onWindowResize = () => {
