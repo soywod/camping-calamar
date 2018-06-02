@@ -1,4 +1,93 @@
 @import "../queries"
 
-// @media (max-width: $max-width-m)
+@media (max-width: $max-width-xxl)
+  .title
+    > h2
+      font-size: 32px
+
+    > div
+      font-size: 16px
+
+  .table
+    margin-bottom: 20px
+    justify-content: space-between
+
+  .grid-column-left,
+  .grid-column-right
+    margin: 0 30px
+
+  %grid-row
+    padding: 5px 25px
+
+  .grid-teal
+    margin: 0 30px
+    width: 100%
+
+  .row
+    padding: 8px 0 8px 25px
+
+  .column-left
+    flex: 1
+    margin-right: 20px
+
+  .column-right
+    flex: 1
+    margin-left: 20px
+
+@media (max-width: $max-width-l)
+  .table
+    flex-direction: column
+
+  .grid-column-left,
+  .grid-column-right
+    margin: 0 30px
+
+  .row
+    padding: 8px 0 8px 25px
+
+  .grid-teal
+    margin: 0 30px
+    width: auto
+
+@media (max-width: $max-width-m)
+  .title
+    > h2
+      font-size: 20px
+
+    > div
+      font-size: 12px
+
+  .grid-column-left,
+  .grid-column-right
+    margin: 0 15px
+
+  .column-left,
+  .column-right
+    margin: 0
+
+  .row
+    padding: 8px 15px
+
+  .grid-teal
+    margin: 0 15px
+    padding: 15px 0
+    flex-direction: column
+
+  %grid-row
+    padding: 5px 15px
+
+  %grid
+    &> .grid-row:nth-of-type(4),
+    &> .grid-row-teal:first-of-type
+      padding-top: 15px
+
+    &> .grid-row-teal:nth-of-type(3),
+    &> .grid-row:last-of-type
+      padding-bottom: 15px
+
+  %item
+    font-size: 12px
+
+  .item-bungalow
+    flex-basis: 100px
 
