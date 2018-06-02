@@ -32,9 +32,16 @@ class AreaComponent extends Component<{}, {}> {
           <Tile type="media" media="image" alt="Bar & restaurant" src={bar} />
           <Tile title="Pour les gourmands">
             <ul>
-              <li>Un supermarché et une boulangerie à 500m</li>
-              <li>Un magasin Bio à 1km</li>
-              <li>Des restaurants aux abords du camping</li>
+              <li>
+                <strong>Pratique</strong><br /><br />
+                Un supermarché et une boulangerie à 500m<br />
+                Un magasin Bio à 1km
+              </li>
+
+              <li>
+                <strong>Et pour les gourmands</strong><br /><br />
+                Des restaurants aux abords du camping
+              </li>
             </ul>
           </Tile>
         </TilePair>
@@ -44,6 +51,7 @@ class AreaComponent extends Component<{}, {}> {
             <ul>
               <li>Le parc Galéa</li>
               <li>La Ferme Bordeo (Essences Naturelles Corse)</li>
+              <li>Un sentier botanique</li>
             </ul>
           </Tile>
           <Tile type="media" media="image" alt="Plants & cactus" src={plants} />
@@ -60,7 +68,10 @@ class AreaComponent extends Component<{}, {}> {
               <li>Location de bateaux</li>
               <li>Cascade de l'Ucelluline</li>
               <li>Musée de Cervione et d'Aléria</li>
-              <li>Chapelles classées, cinéma en plein air</li>
+              <li>
+                Et pour la culture musée...<br />
+                Chapelles classées, cinéma en plein air
+              </li>
             </ul>
           </Tile>
         </TilePair>
