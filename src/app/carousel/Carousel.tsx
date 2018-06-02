@@ -2,8 +2,8 @@ import React, {Component, ReactNode} from "react"
 import Carousel from "react-slick"
 
 const styles = require("./Carousel.sass")
-const left = require("../../static/images/presentation/arrow-left.png")
-const right = require("../../static/images/presentation/arrow-right.png")
+const left = require("../../static/images/carousel/arrow-left.png")
+const right = require("../../static/images/carousel/arrow-right.png")
 
 const settings = {
   dots: true,
