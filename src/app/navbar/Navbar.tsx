@@ -20,10 +20,10 @@ const logoAreaOn = require("../../static/images/logo-area-on.png")
 const logoAreaOff = require("../../static/images/logo-area-off.png")
 const logoContactOn = require("../../static/images/logo-contact-on.png")
 const logoContactOff = require("../../static/images/logo-contact-off.png")
-// const flagFR = require("../../static/images/flag-fr.png")
-const flagEN = require("../../static/images/flag-en.png")
-const flagDE = require("../../static/images/flag-de.png")
-const flagIT = require("../../static/images/flag-it.png")
+const flagFR = require("../../static/images/navbar/flag-fr.png")
+const flagEN = require("../../static/images/navbar/flag-en.png")
+const flagDE = require("../../static/images/navbar/flag-de.png")
+const flagIT = require("../../static/images/navbar/flag-it.png")
 
 const styles = require("./Navbar.sass")
 
@@ -132,9 +132,10 @@ class NavbarComponent extends Component<IProps, IState> {
               </div>
 
               <div className={styles.navLang}>
-                <a href="#" className={styles.navLangItem}><img src={flagEN} alt="English flag" /></a>
-                <a href="#" className={styles.navLangItem}><img src={flagDE} alt="German flag" /></a>
-                <a href="#" className={styles.navLangItem}><img src={flagIT} alt="Italian flag" /></a>
+                <a href="#" className={styles.navLangItem}><img src={flagFR} alt="French translation" /></a>
+                <a href="#" className={styles.navLangItem}><img src={flagEN} alt="English translation" /></a>
+                <a href="#" className={styles.navLangItem}><img src={flagDE} alt="German translation" /></a>
+                <a href="#" className={styles.navLangItem}><img src={flagIT} alt="Italian translation" /></a>
               </div>
             </nav>
 
