@@ -29,7 +29,7 @@ class AreaComponent extends Component<{}, {}> {
         <Homing src={header} title="Alentours" />
 
         <TilePair>
-          <Tile type="media" media="image" alt="Bar & restaurant" src={bar} />
+          <Tile swapOrderOnMobile type="media" media="image" alt="Bar & restaurant" src={bar} />
           <Tile title="Pour les gourmands">
             <ul>
               <li>
@@ -58,7 +58,7 @@ class AreaComponent extends Component<{}, {}> {
         </TilePair>
 
         <TilePair>
-          <Tile type="media" media="image" alt="Scuba diving" src={scubaDiving} />
+          <Tile swapOrderOnMobile type="media" media="image" alt="Scuba diving" src={scubaDiving} />
           <Tile title="Pour les sportifs">
             <ul>
               <li>Sentiers de randonnées pédestres (Mare a mare, a Scupiccia ...)</li>

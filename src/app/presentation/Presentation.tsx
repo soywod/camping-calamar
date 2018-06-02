@@ -59,7 +59,7 @@ class PresentationComponent extends Component<{}, {}> {
         <div id="content" />
 
         <TilePair>
-          <Tile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
+          <Tile swapOrderOnMobile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
           <Tile title="Le Camping en vidéo">
             <p>"Emplacement 17" est un clip crée par l'un de nos fidèles campeurs en hommage au camping Calamar.</p>
             <p>
@@ -87,7 +87,7 @@ class PresentationComponent extends Component<{}, {}> {
         </TilePair>
 
         <TilePair>
-          <Tile inverted type="icons" title="Loisirs" icons={tileLeftIcons} />
+          <Tile swapOrderOnMobile inverted type="icons" title="Loisirs" icons={tileLeftIcons} />
           <Tile type="icons" title="Commodités" icons={tileRightIcons} />
         </TilePair>
 

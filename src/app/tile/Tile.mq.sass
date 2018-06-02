@@ -1,0 +1,40 @@
+@import "../queries"
+
+@media (max-width: $max-width-xxl)
+  %tile-text
+    font-size: 14px
+
+  %tile-title
+    font-size: 26px
+    margin: 10px 0 20px 0
+
+@media (max-width: $max-width-l)
+  %tile-text
+    font-size: 13px
+    padding: 0 30px
+
+    ul
+      list-style-image: inherit
+
+    li
+      margin: 10px 0
+
+  %tile-title
+    font-size: 22px
+    margin: 8px 0 15px 0
+
+  %tile
+    min-height: 400px
+
+    &[data-order="true"]
+      order: 1
+
+  .tile-icon
+    height: auto
+    margin: 10px 0
+
+    img
+      width: 70%
+
+  .tile-icon-label
+    font-size: 12px

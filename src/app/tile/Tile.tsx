@@ -2,7 +2,11 @@ import React, {Component, Fragment} from "react"
 
 const styles = require("./Tile.sass")
 
-type IProps = ITileIcons | ITileMedia | ITileText
+type IProps = ITile & (ITileIcons | ITileMedia | ITileText)
+
+interface ITile {
+  swapOrderOnMobile?: boolean
+}
 
 interface ITileIcon {
   alt: string
@@ -65,7 +69,7 @@ class TileComponent extends Component<IProps, {}> {
     ))
 
     return (
-      <div className={styleTile}>
+      <div className={styleTile} data-order={this.props.swapOrderOnMobile}>
         <h2 className={styles.tileTitle}>{props.title}</h2>
 
         <div className={styles.tileIcons}>
@@ -82,9 +86,7 @@ class TileComponent extends Component<IProps, {}> {
     }
 
     return (
-      <Fragment>
-        <div className={styles.tileMedia} style={style} />
-      </Fragment>
+      <div className={styles.tileMedia} style={style} data-order={this.props.swapOrderOnMobile} />
     )
   }
 
@@ -98,22 +100,18 @@ class TileComponent extends Component<IProps, {}> {
 
   private renderVideo(props: ITileMedia) {
     return (
-      <Fragment>
-        <div className={styles.tileMedia}>
-          <iframe width="100%" height="100%" src={props.src} />
-        </div>
-      </Fragment>
+      <div className={styles.tileMedia} data-order={this.props.swapOrderOnMobile}>
+        <iframe width="100%" height="100%" src={props.src} />
+      </div>
     )
   }
 
   private renderText(props: ITileText) {
     return (
-      <Fragment>
-        <div className={styles.tileTextBlue}>
-          <h2 className={styles.tileTitle}>{props.title}</h2>
-          {this.props.children}
-        </div>
-      </Fragment>
+      <div className={styles.tileTextBlue} data-order={this.props.swapOrderOnMobile}>
+        <h2 className={styles.tileTitle}>{props.title}</h2>
+        {this.props.children}
+      </div>
     )
   }
 }
