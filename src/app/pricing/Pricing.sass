@@ -10,7 +10,7 @@
   > *
     font-weight: bold
 
-.pricing-title
+.title
   margin: 20px 0
 
   > *
@@ -24,57 +24,119 @@
   > div
     font-size: 18px
 
-.pricing-column
+.table
   display: flex
   max-width: 1024px
+  width: 100%
+  margin-bottom: 30px
 
-%pricing-grid
+%grid
   background: $white
   display: flex
   flex-direction: column
   border-radius: 5px
 
-  &> .pricing-grid-row-teal:first-of-type
+  &> .grid-row-teal:first-of-type
     padding-top: 30px
     border-radius: 5px 5px 0 0
 
-  &> .pricing-grid-row-teal:nth-of-type(3)
+  &> .grid-row-teal:nth-of-type(3)
     padding-bottom: 25px
 
-  &> .pricing-grid-row:nth-of-type(4)
+  &> .grid-row:nth-of-type(4)
     padding-top: 25px
 
-  &> .pricing-grid-row:last-of-type
+  &> .grid-row:last-of-type
     padding-bottom: 30px
 
-.pricing-grid-left
-  @extend %pricing-grid
+.grid-teal
+  @extend %grid
+  background: $teal3
+  flex-direction: row
+  margin: 0 50px
+  padding: 30px 0
+  width: 100%
+
+.grid-column-left
+  @extend %grid
   margin: 0 40px 0 50px
 
-.pricing-grid-right
-  @extend %pricing-grid
+.grid-column-right
+  @extend %grid
   margin: 0 50px 0 40px
 
-%pricing-grid-row
+%grid-row
   display: flex
   padding: 5px 45px
 
-.pricing-grid-row
-  @extend %pricing-grid-row
+.grid-row
+  @extend %grid-row
 
-.pricing-grid-row-teal
-  @extend %pricing-grid-row
+.grid-row-teal
+  @extend %grid-row
   background: $teal3
 
-.pricing-grid-icon
-  flex-basis: 10%
+.row
+  display: flex
+  padding: 8px 0 8px 45px
 
-.pricing-grid-title
-  flex-basis: 40%
-  color: $teal2
+.column-left
+  flex: 1
+  margin-right: 35px
+
+.column-right
+  flex: 1
+  margin-left: 35px
+
+%icon
+  flex-basis: 32px
+  text-align: center
+
+.icon
+  @extend %icon
+
+.icon-bungalow
+  @extend %icon
+  align-items: center
+  display: flex
+  justify-content: center
+
+%item
+  display: flex
+  flex-direction: column
+  flex: 1
   margin-left: 10px
 
-.pricing-grid-price
-  flex-basis: 50%
-  margin-left: 20px
+  > span
+    margin: 5px 0
+
+    &:first-of-type
+      margin-top: 0
+
+    &:last-of-type
+      margin-bottom: 0
+
+.item
+  @extend %item
+
+.item-teal
+  @extend %item
+  color: $teal2
+
+.item-wifi
+  @extend %item
+  flex: inherit
+  flex-basis: 60px
+
+.item-wifi-info
+  @extend %item
+  flex: inherit
+
+.item-bungalow
+  @extend %item
+  color: $teal2
+  display: flex
+  flex: inherit
+  flex-basis: 150px
+  justify-content: center
 
