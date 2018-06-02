@@ -54,6 +54,7 @@ class HomeComponent extends Component<IProps, IState> {
   public componentWillUnmount() {
     window.removeEventListener("resize", this.onWindowResize)
     createjs.Ticker.reset()
+    /* console.log('unmount') */
   }
 
   private onWindowResize = () => {

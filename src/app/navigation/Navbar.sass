@@ -1,6 +1,5 @@
 @import "../colors"
-
-$navSize: 320px
+@import "../queries"
 
 .nav
   align-items: center
@@ -13,13 +12,9 @@ $navSize: 320px
   padding: 40px
   position: fixed
   top: 0
-  width: $navSize
+  width: $nav-width-xxl
 
-.nav-logo
-  box-sizing: content-box
-  padding-top: 20px
-
-.nav-item
+.item
   align-items: center
   display: flex
   font-weight: bold
@@ -45,21 +40,37 @@ $navSize: 320px
     .off
       display: none
 
-.nav-item-logo
+.item-logo
   display: flex
   justify-content: center
   margin: 0 25px 10px 0
   width: 55px
 
-.nav-lang
+.lang
   display: flex
   justify-content: center
   padding-bottom: 60px
 
-.nav-lang-item
+.lang-item
   margin: 3px
   padding: 4px
   
-.main-content
-  margin-left: $navSize
+%burger
+  cursor: pointer
+  display: none
+  top: 20px
+  width: 50px
+  z-index: 1
+
+.burger-open
+  @extend %burger
+  left: 20px
+  position: fixed
+
+.burger-close
+  @extend %burger
+  position: absolute
+  right: 20px
+
+@import './Navbar.md'
 

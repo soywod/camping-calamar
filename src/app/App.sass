@@ -1,7 +1,20 @@
 @import "./colors"
+@import "./queries"
 
 *
   box-sizing: border-box
   color: $black
   font-family: Poppins, sans-serif
+
+.main
+  position: relative
+  margin-left: $nav-width-xxl
+
+@media (max-width: $max-width-xxl)
+  .main
+    margin-left: $nav-width-xl
+
+@media (max-width: $max-width-l)
+  .main
+    margin-left: 0
 

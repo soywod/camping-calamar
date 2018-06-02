@@ -1,6 +1,14 @@
 import React, {Component} from "react"
+import {HashRouter, Route, withRouter} from "react-router-dom"
 
-import Navbar from "./navbar/Navbar"
+import Area from "./area/Area"
+import Booking from "./booking/Booking"
+import Contact from "./contact/Contact"
+import Home from "./home/Home"
+import Navbar from "./navigation/Navbar"
+import Presentation from "./presentation/Presentation"
+import Pricing from "./pricing/Pricing"
+import ScrollToTop from "./scroll/ScrollToTop"
 
 const styles = require("./App.sass")
 
@@ -15,7 +23,22 @@ class AppComponent extends Component<{}, IState> {
   }
 
   public render() {
-    return <Navbar loaded={this.state.loaded} />
+    return (
+      <HashRouter>
+        <ScrollToTop>
+          <Navbar />
+
+          <main className={styles.main}>
+            <Route exact path="/" component={this.renderHome} />
+            <Route exact path="/presentation" component={Presentation} />
+            <Route exact path="/pricing" component={Pricing} />
+            <Route exact path="/booking" component={Booking} />
+            <Route exact path="/area" component={Area} />
+            <Route exact path="/contact" component={Contact} />
+          </main>
+        </ScrollToTop>
+      </HashRouter>
+    )
   }
 
   public componentDidMount() {
@@ -46,6 +69,10 @@ class AppComponent extends Component<{}, IState> {
 
         setTimeout(() => document.body.removeChild($loader), 600)
       })
+  }
+
+  private renderHome = () => {
+    return <Home loaded={this.state.loaded} />
   }
 }
 
