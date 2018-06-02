@@ -43,8 +43,8 @@ class NavbarComponent extends Component<{}, IState> {
             exact
             path="/"
             children={() => (
-              <Link to="/">
-                <img width="100%" className={styles.navLogo} src={logo} alt="Camping Calamar logo" />
+              <Link to="/" className={styles.logo}>
+                <img width="100%" src={logo} alt="Camping Calamar logo" />
               </Link>
             )}
           />
