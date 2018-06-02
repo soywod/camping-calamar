@@ -1,4 +1,44 @@
 @import "../queries"
 
-// @media (max-width: $max-width-m)
+@media (max-width: $max-width-xxl)
+  .contact
+    margin: 30px 0
+
+  .contact-icon
+    height: 80px
+    width: auto
+
+  .contact-title
+    font-size: 18px
+
+  .contact-content
+    font-size: 14px
+
+@media (max-width: $max-width-xl)
+  .contact-icon
+    height: 60px
+
+  .map
+    height: 500px
+
+@media (max-width: $max-width-m)
+  .contact
+    margin: 10px 0
+    flex-direction: column
+
+  .contact-icon
+    height: 40px
+    margin-bottom: 0
+
+  .contact-title
+    font-size: 14px
+
+  .contact-content
+    font-size: 12px
+
+  .contact-item:not(:last-of-type)
+    margin-bottom: 40px
+
+  .map
+    height: 400px
 

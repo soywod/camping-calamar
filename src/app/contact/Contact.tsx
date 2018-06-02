@@ -49,7 +49,7 @@ class ContactComponent extends Component<{}, {}> {
         <GoogleMap
           googleMapURL={getGoogleMapURL()}
           loadingElement={<div style={{height: "100%"}} />}
-          containerElement={<div style={{height: "600px"}} />}
+          containerElement={<div className={styles.map} />}
           mapElement={<div style={{height: "100%"}} />}
         />
 
