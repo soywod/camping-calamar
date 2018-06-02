@@ -1,4 +1,27 @@
 @import "../queries"
 
-// @media (max-width: $max-width-m)
+@media (max-width: $max-width-xxl)
+  .footer-top,
+  .footer-bottom
+    padding: 30px
+
+  .footer-top
+    font-size: 12px
+
+@media (max-width: $max-width-l)
+  .footer-info
+    align-items: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-top: 30px
+    order: 1
+    text-align: center
+
+  .footer-nav,
+  .footer-top
+    flex-direction: column
+
+  .footer-bottom
+    padding: 0 30px
 
