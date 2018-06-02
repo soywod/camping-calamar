@@ -33,11 +33,6 @@ class HomeComponent extends Component<IProps, IState> {
           <canvas id="canvas" className={canvas}></canvas>
           <div id="dom_overlay_container" className={styles.overlay} />
         </div>
-
-        <div id="_preload_div_" className={styles.overlay}>
-          <span />
-          <img src={loader} />
-        </div>
       </>
     )
   }
@@ -54,7 +49,6 @@ class HomeComponent extends Component<IProps, IState> {
   public componentWillUnmount() {
     window.removeEventListener("resize", this.onWindowResize)
     createjs.Ticker.reset()
-    /* console.log('unmount') */
   }
 
   private onWindowResize = () => {

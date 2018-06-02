@@ -29,7 +29,7 @@ class AppComponent extends Component<{}, IState> {
           <Navbar />
 
           <main className={styles.main}>
-            <Route exact path="/" component={this.renderHome} />
+            <Route exact path="/" component={() => <Home loaded={this.state.loaded} />} />
             <Route exact path="/presentation" component={Presentation} />
             <Route exact path="/pricing" component={Pricing} />
             <Route exact path="/booking" component={Booking} />
@@ -69,10 +69,6 @@ class AppComponent extends Component<{}, IState> {
 
         setTimeout(() => document.body.removeChild($loader), 600)
       })
-  }
-
-  private renderHome = () => {
-    return <Home loaded={this.state.loaded} />
   }
 }
 
