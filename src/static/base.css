@@ -49,3 +49,23 @@ p {
   z-index: 1;
 }
 
+@media (max-width: 767px) {
+  .slick-prev, .slick-next {
+    width: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slick-prev, .slick-next {
+    width: 20px;
+  }
+
+  .slick-prev {
+    left: 30px;
+  }
+
+  .slick-next {
+    right: 30px;
+  }
+}
+

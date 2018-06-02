@@ -7,8 +7,8 @@ const right = require("../../static/images/carousel/arrow-right.png")
 
 const settings = {
   dots: true,
-  nextArrow: <img src={right} alt="Next slide" />,
-  prevArrow: <img src={left} alt="Previous slide" />,
+  nextArrow: <img src={right} className={styles.arrow} alt="Next slide" />,
+  prevArrow: <img src={left} className={styles.arrow} alt="Previous slide" />,
   slidesToScroll: 1,
   slidesToShow: 1,
   speed: 200,
