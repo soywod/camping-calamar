@@ -8,6 +8,7 @@ const development = {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
+    host: "0.0.0.0",
     hot: true,
     contentBase: path.join(__dirname, "..", "src", "static"),
   },
