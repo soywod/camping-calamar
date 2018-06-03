@@ -16,12 +16,12 @@
   .nav
     left: -$nav-width-m
     position: fixed
+    transition: left 400ms cubic-bezier(0.645, 0.045, 0.355, 1)
     width: $nav-width-m
     z-index: 3
 
     &[data-open="true"]
       left: 0
-      transition: left 600ms cubic-bezier(0.645, 0.045, 0.355, 1)
 
   .burger-open,
   .burger-close,
