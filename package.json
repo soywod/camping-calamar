@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.0.5",
     "@types/react-router-dom": "^4.2.6",
     "@types/react-slick": "^0.23.0",
+    "@types/react-swipeable": "^4.2.1",
     "@types/webpack-env": "^1.13.6",
     "autoprefixer": "^8.5.0",
     "clean-webpack-plugin": "^0.1.19",
@@ -41,7 +42,8 @@
     "react-dom": "^16.3.2",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.2.2",
-    "react-slick": "^0.23.1"
+    "react-slick": "^0.23.1",
+    "react-swipeable": "^4.3.0"
   },
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/development",

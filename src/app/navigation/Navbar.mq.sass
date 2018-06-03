@@ -20,17 +20,29 @@
     width: $nav-width-m
     z-index: 3
 
-    &[data-open="true"]
+    &[data-visible="true"]
       left: 0
 
-  .burger-open,
-  .burger-close,
+  .burger
     display: block
+    z-index: 2
+
+  .fade
+    display: block
+
+  .item
+    font-size: 14px
+    
+  .item-logo
+    align-items: center
+    margin: 0 20px 5px 0
+    width: 30px
+    height: 30px
 
   .lang
     padding-bottom: 0
 
-  .logo > img
+  .logo
     width: 80%
 
 @media (max-width: $max-width-m)
@@ -38,9 +50,17 @@
     left: -$nav-width-s
     width: $nav-width-s
 
+  .item
+    font-size: 12px
+    
+  .item-logo
+    margin: 0 20px 5px 0
+    width: 22px
+    height: 22px
+
   .lang
     padding-bottom: 0
 
-  .logo > img
-    width: 70%
+  .logo
+    width: 60%
 
