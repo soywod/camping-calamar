@@ -47,7 +47,11 @@ class NavbarComponent extends Component<{}, IState> {
     return (
       <React.Fragment>
         <img className={styles.burger} src={burger} alt="Open menu" onMouseDown={this.openNavbar} />
-        <div className={styles.fade} data-visible={this.state.opened} onMouseDown={this.closeNavbar} />
+
+        <Swipeable onSwipingLeft={this.closeNavbar}>
+          <div className={styles.fade} data-visible={this.state.opened} onMouseDown={this.closeNavbar} />
+        </Swipeable>
+
         <Swipeable onSwipingLeft={this.closeNavbar}>
           <nav className={styles.nav} data-visible={this.state.opened}>
             {this.renderHomeLink()}
