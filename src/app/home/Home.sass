@@ -1,13 +1,20 @@
 @import "../colors"
 
 .container
-  align-items: center
-  background-color: rgba(255, 255, 255, 1.00)
-  display: flex
   height: 100vh
   overflow: hidden
   position: relative
   width: 100%
+
+  video
+    min-width: 100%
+    min-height: 100%
+    width: auto
+    height: auto
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translate(0, -50%)
 
 .fade
   background: $white
@@ -18,19 +25,11 @@
   top: 0
   width: 100%
 
-  &[data-visible="false"]
+  &[data-hide="true"]
     animation-duration: 600ms
     animation-name: fade
     animation-fill-mode: forwards
     opacity: 0
-
-.video-full-height
-  height: 100%
-  width: auto
-
-.video-full-width
-  height: auto
-  width: 100%
 
 @keyframes fade
   0%

@@ -42,17 +42,23 @@ class AppComponent extends Component<{}, IState> {
   }
 
   public componentDidMount() {
-    const $loader = document.getElementById("loader")
-    if (! $loader) {
-      return
+    window.onload = () => {
+      const $loader = document.getElementById("loader")
+      if (! $loader) {
+        return
+      }
+
+      $loader.className = "loaded"
+
+      setTimeout(() => {
+        this.setState({loaded: true})
+        document.body.removeChild($loader)
+      }, 600)
     }
+  }
 
-    $loader.className = "loaded"
-
-    setTimeout(() => {
-      this.setState({loaded: true})
-      document.body.removeChild($loader)
-    }, 600)
+  public componentWillUnmount() {
+    window.onload = null
   }
 }
 

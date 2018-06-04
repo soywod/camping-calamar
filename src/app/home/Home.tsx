@@ -4,7 +4,6 @@ declare function init(): any
 declare var createjs: any
 
 const styles = require("./Home.sass")
-const loader = require("../../static/images/logo-area-off.png")
 const home = require("../../static/videos/home.mp4")
 
 interface IProps {
@@ -12,58 +11,53 @@ interface IProps {
 }
 
 interface IState {
-  isFullWidth: boolean
+  canPlayVideo: boolean
 }
 
 class HomeComponent extends Component<IProps, IState> {
-  private $video: HTMLVideoElement | null
+  private $video: HTMLMediaElement | null
 
   constructor(props: IProps) {
     super(props)
-    this.state = {isFullWidth: false}
+
+    this.state = {
+      canPlayVideo: false,
+    }
   }
 
   public render() {
-    const video = this.state.isFullWidth
-      ? styles.videoFullWidth
-      : styles.videoFullHeight
+    if (! this.props.loaded) {
+      return null
+    }
 
     return (
       <div className={styles.container}>
-        <div className={styles.fade} data-visible={! this.props.loaded}></div>
-        <video ref={(ref) => this.$video = ref} className={video} autoPlay loop preload="true">
+        <video ref={(ref) => this.$video = ref} autoPlay loop preload="true">
           <source src={home} type="video/mp4" />
         </video>
+
+        <div className={styles.fade} data-hide={this.state.canPlayVideo}></div>
       </div>
     )
   }
 
   public componentDidMount() {
     if (this.$video) {
-      this.$video.addEventListener("loadstart", this.onWindowResize)
-    }
-
-    window.addEventListener("resize", this.onWindowResize)
-
-    if (this.props.loaded) {
-      this.onWindowResize()
+      this.$video.addEventListener("canplay", this.videoReady)
     }
   }
 
   public componentWillUnmount() {
     if (this.$video) {
-      this.$video.removeEventListener("loadeddata", this.onWindowResize)
+      this.$video.removeEventListener("canplay", this.videoReady)
     }
-
-    window.removeEventListener("resize", this.onWindowResize)
   }
 
-  private onWindowResize = () => {
-    const width = this.$video && (this.$video.offsetWidth) || 0
-    const height = window.innerHeight
-    const isFullWidth = (width / height > 1.5)
-
-    this.setState({isFullWidth})
+  private videoReady = () => {
+    this.setState(
+      {canPlayVideo: true},
+      () => this.$video && this.$video.play(),
+    )
   }
 }
 
