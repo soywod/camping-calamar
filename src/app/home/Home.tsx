@@ -4,6 +4,7 @@ declare function init(): any
 declare var createjs: any
 
 const styles = require("./Home.sass")
+const player = require("../../static/images/player.png")
 const home = require("../../static/videos/home.mp4")
 
 interface IProps {
@@ -15,7 +16,8 @@ interface IState {
 }
 
 class HomeComponent extends Component<IProps, IState> {
-  private $video: HTMLMediaElement | null
+  private $video: HTMLVideoElement | null
+  private $player: HTMLDivElement | null
 
   constructor(props: IProps) {
     super(props)
@@ -37,27 +39,37 @@ class HomeComponent extends Component<IProps, IState> {
         </video>
 
         <div className={styles.fade} data-hide={this.state.canPlayVideo}></div>
+        <div ref={(ref) => this.$player = ref} className={styles.player} onClick={this.playVideo}>
+          <img src={player} alt="Play the video" />
+        </div>
       </div>
     )
   }
 
   public componentDidMount() {
     if (this.$video) {
-      this.$video.addEventListener("canplay", this.videoReady)
+      this.$video.addEventListener("loadeddata", this.videoReady)
     }
   }
 
   public componentWillUnmount() {
     if (this.$video) {
-      this.$video.removeEventListener("canplay", this.videoReady)
+      this.$video.removeEventListener("loadeddata", this.videoReady)
+    }
+  }
+
+  private playVideo = () => {
+    if (this.$player) {
+      this.$player.style.display = "none"
+    }
+
+    if (this.$video) {
+      this.$video.play()
     }
   }
 
   private videoReady = () => {
-    this.setState(
-      {canPlayVideo: true},
-      () => this.$video && this.$video.play(),
-    )
+    this.setState({canPlayVideo: true})
   }
 }
 
