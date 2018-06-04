@@ -42,33 +42,16 @@ class AppComponent extends Component<{}, IState> {
   }
 
   public componentDidMount() {
-    const paths = require
-      .context("../static/images", true)
-      .keys()
-      .map((path) => require(`../static/images/${path.substring(2)}`))
+    this.setState({loaded: true})
 
-    const requests = paths.map((path) => new Promise((resolve, reject) => {
-      const image = document.createElement("img")
+    const $loader = document.getElementById("loader")
+    if (! $loader) {
+      return
+    }
 
-      image.setAttribute("src", path)
-      image.onload = resolve
-      image.onerror = reject
-    }))
+    $loader.className = "loaded"
 
-    Promise
-      .all(requests)
-      .then(() => {
-        this.setState({loaded: true})
-
-        const $loader = document.getElementById("loader")
-        if (! $loader) {
-          return
-        }
-
-        $loader.className = "loaded"
-
-        setTimeout(() => document.body.removeChild($loader), 600)
-      })
+    setTimeout(() => document.body.removeChild($loader), 600)
   }
 }
 
