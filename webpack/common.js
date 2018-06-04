@@ -19,7 +19,7 @@ const common = {
         loader: "ts-loader",
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(mp4|png|jpg|gif)$/,
         loader: "file-loader?name=[hash:8].[ext]",
       },
     ],

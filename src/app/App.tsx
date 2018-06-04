@@ -42,8 +42,6 @@ class AppComponent extends Component<{}, IState> {
   }
 
   public componentDidMount() {
-    this.setState({loaded: true})
-
     const $loader = document.getElementById("loader")
     if (! $loader) {
       return
@@ -51,7 +49,10 @@ class AppComponent extends Component<{}, IState> {
 
     $loader.className = "loaded"
 
-    setTimeout(() => document.body.removeChild($loader), 600)
+    setTimeout(() => {
+      this.setState({loaded: true})
+      document.body.removeChild($loader)
+    }, 600)
   }
 }
 

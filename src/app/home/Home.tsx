@@ -5,6 +5,7 @@ declare var createjs: any
 
 const styles = require("./Home.sass")
 const loader = require("../../static/images/logo-area-off.png")
+const home = require("../../static/videos/home.mp4")
 
 interface IProps {
   loaded: boolean
@@ -15,7 +16,7 @@ interface IState {
 }
 
 class HomeComponent extends Component<IProps, IState> {
-  private animation: HTMLDivElement | null
+  private $video: HTMLVideoElement | null
 
   constructor(props: IProps) {
     super(props)
@@ -23,22 +24,25 @@ class HomeComponent extends Component<IProps, IState> {
   }
 
   public render() {
-    const canvas = this.state.isFullWidth
-      ? styles.canvasFullWidth
-      : styles.canvasFullHeight
+    const video = this.state.isFullWidth
+      ? styles.videoFullWidth
+      : styles.videoFullHeight
 
     return (
-      <>
-        <div ref={(ref) => this.animation = ref} id="animation_container" className={styles.animation} >
-          <canvas id="canvas" className={canvas}></canvas>
-          <div id="dom_overlay_container" className={styles.overlay} />
-        </div>
-      </>
+      <div className={styles.container}>
+        <div className={styles.fade} data-visible={! this.props.loaded}></div>
+        <video ref={(ref) => this.$video = ref} className={video} autoPlay loop preload="true">
+          <source src={home} type="video/mp4" />
+        </video>
+      </div>
     )
   }
 
   public componentDidMount() {
-    init() // From animation script provided by Adobe
+    if (this.$video) {
+      this.$video.addEventListener("loadstart", this.onWindowResize)
+    }
+
     window.addEventListener("resize", this.onWindowResize)
 
     if (this.props.loaded) {
@@ -47,12 +51,15 @@ class HomeComponent extends Component<IProps, IState> {
   }
 
   public componentWillUnmount() {
+    if (this.$video) {
+      this.$video.removeEventListener("loadeddata", this.onWindowResize)
+    }
+
     window.removeEventListener("resize", this.onWindowResize)
-    createjs.Ticker.reset()
   }
 
   private onWindowResize = () => {
-    const width = this.animation && (this.animation.offsetWidth) || 0
+    const width = this.$video && (this.$video.offsetWidth) || 0
     const height = window.innerHeight
     const isFullWidth = (width / height > 1.5)
 
