@@ -8,7 +8,7 @@ const logoPresentationOn = require("../../static/images/logo-presentation-on.png
 const logoPresentationOff = require("../../static/images/logo-presentation-off.png")
 const logoPricingOn = require("../../static/images/logo-pricing-on.png")
 const logoPricingOff = require("../../static/images/logo-pricing-off.png")
-// const logoBookingOn = require("../../static/images/logo-booking-on.png")
+const logoBookingOn = require("../../static/images/logo-booking-on.png")
 const logoBookingOff = require("../../static/images/logo-booking-off.png")
 const logoAreaOn = require("../../static/images/logo-area-on.png")
 const logoAreaOff = require("../../static/images/logo-area-off.png")
@@ -92,7 +92,7 @@ class NavbarComponent extends Component<{}, IState> {
                 children={({match}) => (
                   <Link to="/booking" className={styles.item} data-match={!!match} onClick={this.closeNavbar}>
                     <div className={styles.itemLogo}>
-                      <img className={styles.on} src={logoBookingOff} alt="Booking icon" />
+                      <img className={styles.on} src={logoBookingOn} alt="Booking icon" />
                       <img className={styles.off} src={logoBookingOff} alt="Booking icon" />
                     </div>
                     <span>Réservation</span>
