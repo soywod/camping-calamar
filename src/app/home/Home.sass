@@ -1,53 +1,29 @@
-@import "../colors"
-
 .container
-  height: 100vh
+  height: 100vh !important
   overflow: hidden
   position: relative
-  width: 100%
+  width: 100% !important
 
-  video
-    min-width: 100%
-    min-height: 100%
-    width: auto
-    height: auto
-    position: absolute
-    top: 50%
-    left: 0
-    transform: translate(0, -50%)
+%canvas
+  background-color: rgba(255, 255, 255, 1.00)
+  display: block
 
-.player
-  align-items: center
-  background: transparentize($black, .2)
-  cursor: pointer
+.canvas-full-height
+  @extend %canvas
+  height: 100% !important
+  width: auto !important
+
+.canvas-full-width
+  @extend %canvas
+  height: auto !important
+  width: 100% !important
+
+.overlay
   display: none
-  height: 100%
-  justify-content: center
   left: 0
-  position: absolute
+  overflow: hidden
+  pointer-events: none
   top: 0
-  width: 100%
-
-.fade
-  background: $white
-  height: 100%
-  left: 0
-  opacity: 1
-  position: absolute
-  top: 0
-  width: 100%
-
-  &[data-hide="true"]
-    animation-duration: 600ms
-    animation-name: fade
-    animation-fill-mode: forwards
-    opacity: 0
-
-@keyframes fade
-  0%
-    opacity: 1
-  100%
-    opacity: 0
 
 @import "./Home.mq"
 
