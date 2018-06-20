@@ -2,6 +2,14 @@
   display: flex
   height: 600px
   width: 100%
+  opacity: 0
+  transition: opacity 400ms, transform 400ms
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  transform: translateY(100px)
+
+  &[data-visible="true"]
+    opacity: 1
+    transform: translateX(0)
 
 @import './TilePair.mq'
 
