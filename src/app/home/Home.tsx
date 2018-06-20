@@ -31,7 +31,8 @@ class HomeComponent extends Component<IProps, IState> {
     }
 
     const style = {
-      background: `url(${this.background}) no-repeat center center`,
+      backgroundImage: `url(${this.background})`,
+      backgroundPosition: "left center",
       backgroundSize: "cover",
     }
 
