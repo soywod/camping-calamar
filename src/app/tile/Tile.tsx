@@ -8,6 +8,10 @@ interface ITile {
   swapOrderOnMobile?: boolean
 }
 
+interface IState {
+  startVideo: boolean
+}
+
 interface ITileIcon {
   alt: string
   label: JSX.Element
@@ -24,6 +28,7 @@ interface ITileIcons {
 interface ITileMedia {
   alt?: string
   src: string
+  preview?: string
   media: "image" | "video"
   type: "media"
 }
@@ -35,9 +40,13 @@ interface ITileText {
   type?: "text"
 }
 
-class TileComponent extends Component<IProps, {}> {
+class TileComponent extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props)
+
+    this.state = {
+      startVideo: false,
+    }
   }
 
   public render() {
@@ -99,9 +108,20 @@ class TileComponent extends Component<IProps, {}> {
   }
 
   private renderVideo(props: ITileMedia) {
+    const {startVideo} = this.state
+    const style = props.preview ? {
+      background: startVideo ? "#000000" : `url(${props.preview}) center center`,
+      backgroundSize: "cover",
+      cursor: "pointer",
+    } : {}
+
     return (
-      <div className={styles.tileMedia} data-order={this.props.swapOrderOnMobile}>
-        <iframe width="100%" height="100%" src={props.src} />
+      <div
+        className={styles.tileMedia}
+        data-order={this.props.swapOrderOnMobile}
+        style={style}
+        onClick={() => this.setState({startVideo: true})}>
+        {startVideo && <iframe width="100%" height="100%" src={props.src} />}
       </div>
     )
   }

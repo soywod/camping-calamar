@@ -22,6 +22,7 @@ const shower = require("../../static/images/presentation/shower.png")
 const grill = require("../../static/images/presentation/grill.png")
 const area = require("../../static/images/presentation/area.png")
 const carouselDemo = require("../../static/images/presentation/carousel-demo.png")
+const preview = require("../../static/images/presentation/video-preview.jpg")
 
 const tileLeftIcons = [
   {alt: "Beach", label: <span>Les pieds<br/>dans l'eau</span>, src: beach},
@@ -59,7 +60,13 @@ class PresentationComponent extends Component<{}, {}> {
         <div id="content" />
 
         <TilePair>
-          <Tile swapOrderOnMobile type="media" media="video" src="https://www.youtube.com/embed/mZC7QVxoRgA" />
+          <Tile
+            swapOrderOnMobile
+            type="media"
+            media="video"
+            preview={preview}
+            src="https://www.youtube.com/embed/mZC7QVxoRgA?autoplay=1"
+          />
           <Tile title="Le Camping en vidéo">
             <p>"Emplacement 17" est un clip crée par l'un de nos fidèles campeurs en hommage au camping Calamar.</p>
             <p>
