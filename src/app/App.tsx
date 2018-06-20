@@ -50,10 +50,8 @@ class AppComponent extends Component<{}, IState> {
 
       $loader.className = "loaded"
 
-      setTimeout(() => {
-        this.setState({loaded: true})
-        document.body.removeChild($loader)
-      }, 600)
+      this.setState({loaded: true})
+      setTimeout(() => document.body.removeChild($loader), 1000)
     }
   }
 
