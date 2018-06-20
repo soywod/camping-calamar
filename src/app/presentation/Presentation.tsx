@@ -7,7 +7,7 @@ import TilePair from "../tile-pair/TilePair"
 import Tile from "../tile/Tile"
 
 const styles = require("./Presentation.sass")
-const header = require("../../static/images/presentation/header.png")
+const header = require("../../static/images/presentation/header.jpg")
 const sunset = require("../../static/images/presentation/sunset.png")
 const beach = require("../../static/images/presentation/beach.png")
 const pingPong = require("../../static/images/presentation/ping-pong.png")
