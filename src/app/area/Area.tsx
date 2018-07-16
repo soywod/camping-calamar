@@ -11,12 +11,6 @@ const header = require("../../static/images/area/header.png")
 const bar = require("../../static/images/area/bar.png")
 const plants = require("../../static/images/area/plants.png")
 const scubaDiving = require("../../static/images/area/scuba-diving.png")
-const carouselDemo = require("../../static/images/area/carousel-demo.png")
-
-const carouselImages = [
-  {alt: "Carousel demo", src: carouselDemo},
-  {alt: "Carousel demo", src: carouselDemo},
-]
 
 class AreaComponent extends Component<{}, {}> {
   constructor(props: {}) {
@@ -76,7 +70,7 @@ class AreaComponent extends Component<{}, {}> {
           </Tile>
         </TilePair>
 
-        <Carousel images={carouselImages} />
+        <Carousel googleFolderId="1_C0HMdMVOx1tDGKmNwDhNPIileSosrWc" />
 
         <Footer />
       </Fragment>

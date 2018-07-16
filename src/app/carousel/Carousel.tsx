@@ -14,28 +14,50 @@ const settings = {
   speed: 200,
 }
 
-interface IImage {
-  alt: string
-  src: string
+interface Props {
+  googleFolderId: string
 }
 
-interface IProps {
-  images: IImage[]
+interface State {
+  images: string[]
 }
 
-class CarouselComponent extends Component<IProps, {}> {
-  constructor(props: IProps) {
+const GOOGLE_DRIVE_TOKEN = "AIzaSyCIhb6NQ1EE7jlNrkVaGj1BKQn3QkHcM2w"
+
+class CarouselComponent extends Component<Props, State> {
+  constructor(props: Props) {
     super(props)
+
+    this.state = {
+      images: [],
+    }
   }
 
   public render() {
+    if (! this.state.images.length) {
+      return null
+    }
+
     return (
       <div className={styles.carousel}>
         <Carousel {...settings}>
-          {this.props.images.map((image, key) => <img key={key} alt={image.alt} src={image.src} />)}
+          {this.state.images.map((image, key) =>
+            <img key={key} alt={`image-${key}`} src={image} />,
+          )}
         </Carousel>
       </div>
     )
+  }
+
+  public componentDidMount() {
+    const baseurl = "https://www.googleapis.com/drive/v3/files"
+    const q = `'${this.props.googleFolderId}'+in+parents`
+    const key = GOOGLE_DRIVE_TOKEN
+
+    fetch(`${baseurl}?q=${q}&key=${key}&fields=files(webContentLink)`)
+      .then((data: any) => data.json())
+      .then((data: any) => data.files.map((f: any) => f.webContentLink))
+      .then((images: string[]) => this.setState({images}))
   }
 }
 

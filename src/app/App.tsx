@@ -12,11 +12,11 @@ import ScrollToTop from "./scroll/ScrollToTop"
 
 const styles = require("./App.sass")
 
-interface IState {
+interface State {
   loaded: boolean
 }
 
-class AppComponent extends Component<{}, IState> {
+class AppComponent extends Component<{}, State> {
   constructor(props: {}) {
     super(props)
     this.state = {loaded: false}

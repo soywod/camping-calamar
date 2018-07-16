@@ -6481,8 +6481,8 @@ source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
 soywod-tslint-rules@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/soywod-tslint-rules/-/soywod-tslint-rules-1.0.1.tgz#ff86247d0f0bea7d7f98d7ec93789911661d3858"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/soywod-tslint-rules/-/soywod-tslint-rules-1.0.2.tgz#ef29ac1f7599bfe9813d487ec78e8d12bfda9278"
 
 spdx-correct@^3.0.0:
   version "3.0.0"
