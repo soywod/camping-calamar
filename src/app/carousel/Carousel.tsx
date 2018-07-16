@@ -22,8 +22,6 @@ interface State {
   images: string[]
 }
 
-const GOOGLE_DRIVE_TOKEN = "AIzaSyCIhb6NQ1EE7jlNrkVaGj1BKQn3QkHcM2w"
-
 class CarouselComponent extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -52,7 +50,7 @@ class CarouselComponent extends Component<Props, State> {
   public componentDidMount() {
     const baseurl = "https://www.googleapis.com/drive/v3/files"
     const q = `'${this.props.googleFolderId}'+in+parents`
-    const key = GOOGLE_DRIVE_TOKEN
+    const key = "AIzaSyCIhb6NQ1EE7jlNrkVaGj1BKQn3QkHcM2w"
 
     fetch(`${baseurl}?q=${q}&key=${key}&fields=files(webContentLink)`)
       .then((data: any) => data.json())
