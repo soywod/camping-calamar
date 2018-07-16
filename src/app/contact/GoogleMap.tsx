@@ -13,9 +13,9 @@ const GoogleMapComponent = withScriptjs(withGoogleMap((props) => (
 )))
 
 function getGoogleMapURL() {
-  const apiKey = "AIzaSyCmss3qELP65PTTFuG8zcePWgkRvvVi8ck"
+  const key = "AIzaSyAAidGfYO01HZnXIrpxdt_066AHfn2JGLI"
   const baseURL = "https://maps.googleapis.com/maps/api/js"
-  const params = `key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`
+  const params = `key=${key}&v=3.exp&libraries=geometry,drawing,places`
 
   return `${baseURL}?${params}`
 }
