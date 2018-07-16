@@ -21,13 +21,14 @@ const flagIT = require("../../static/images/navbar/flag-it.png")
 
 const styles = require("./Navbar.sass")
 
-interface IState {
+interface State {
   opened: boolean
 }
 
-class NavbarComponent extends Component<{}, IState> {
+class NavbarComponent extends Component<{}, State> {
   constructor(props: {}) {
     super(props)
+
     this.state = {
       opened: false,
     }

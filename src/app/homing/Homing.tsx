@@ -3,15 +3,15 @@ import React, {Component, MouseEvent} from "react"
 const styles = require("./Homing.sass")
 const arrow = require("../../static/images/arrow-down.png")
 
-interface IProps {
+interface Props {
   title: string | JSX.Element
   src?: string
 }
 
-class HomingComponent extends Component<IProps, {}> {
+class HomingComponent extends Component<Props, {}> {
   private container: HTMLDivElement | null
 
-  constructor(props: IProps) {
+  constructor(props: Props) {
     super(props)
   }
 

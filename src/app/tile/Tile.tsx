@@ -2,30 +2,30 @@ import React, {Component, Fragment} from "react"
 
 const styles = require("./Tile.sass")
 
-type IProps = ITile & (ITileIcons | ITileMedia | ITileText)
+type Props = Tile & (TileIcons | TileMedia | TileText)
 
-interface ITile {
+interface Tile {
   swapOrderOnMobile?: boolean
 }
 
-interface IState {
+interface State {
   startVideo: boolean
 }
 
-interface ITileIcon {
+interface TileIcon {
   alt: string
   label: JSX.Element
   src: string
 }
 
-interface ITileIcons {
-  icons: ITileIcon[]
+interface TileIcons {
+  icons: TileIcon[]
   inverted?: true
   title: string | JSX.Element
   type: "icons"
 }
 
-interface ITileMedia {
+interface TileMedia {
   alt?: string
   src: string
   preview?: string
@@ -33,15 +33,15 @@ interface ITileMedia {
   type: "media"
 }
 
-interface ITileText {
+interface TileText {
   inverted?: true
   secondary?: true
   title: string | JSX.Element
   type?: "text"
 }
 
-class TileComponent extends Component<IProps, IState> {
-  constructor(props: IProps) {
+class TileComponent extends Component<Props, State> {
+  constructor(props: Props) {
     super(props)
 
     this.state = {
@@ -53,15 +53,15 @@ class TileComponent extends Component<IProps, IState> {
     const {props} = this
 
     if (props.type === "icons") {
-      return this.renderIcons(props as ITileIcons)
+      return this.renderIcons(props as TileIcons)
     } else if (props.type === "media") {
-      return this.renderMedia(props as ITileMedia)
+      return this.renderMedia(props as TileMedia)
     } else {
-      return this.renderText(props as ITileText)
+      return this.renderText(props as TileText)
     }
   }
 
-  private renderIcons(props: ITileIcons) {
+  private renderIcons(props: TileIcons) {
     const styleTile = props.inverted
       ? styles.tileTextTealInverted
       : styles.tileTextTeal
@@ -88,7 +88,7 @@ class TileComponent extends Component<IProps, IState> {
     )
   }
 
-  private renderImage(props: ITileMedia) {
+  private renderImage(props: TileMedia) {
     const style = {
       background: `url(${props.src}) center center`,
       backgroundSize: "cover",
@@ -99,7 +99,7 @@ class TileComponent extends Component<IProps, IState> {
     )
   }
 
-  private renderMedia(props: ITileMedia) {
+  private renderMedia(props: TileMedia) {
     if (props.media === "video") {
       return this.renderVideo(props)
     }
@@ -107,7 +107,7 @@ class TileComponent extends Component<IProps, IState> {
     return this.renderImage(props)
   }
 
-  private renderVideo(props: ITileMedia) {
+  private renderVideo(props: TileMedia) {
     const {startVideo} = this.state
     const style = props.preview ? {
       background: startVideo ? "#000000" : `url(${props.preview}) center center`,
@@ -126,7 +126,7 @@ class TileComponent extends Component<IProps, IState> {
     )
   }
 
-  private renderText(props: ITileText) {
+  private renderText(props: TileText) {
     return (
       <div className={styles.tileTextBlue} data-order={this.props.swapOrderOnMobile}>
         <h2 className={styles.tileTitle}>{props.title}</h2>

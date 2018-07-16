@@ -2,11 +2,11 @@ import React, {Component} from "react"
 
 const styles = require("./TilePair.sass")
 
-interface IState {
+interface State {
   visible: boolean
 }
 
-class TilePairComponent extends Component<{}, IState> {
+class TilePairComponent extends Component<{}, State> {
   private $container: HTMLDivElement | null
 
   constructor(props: {}) {

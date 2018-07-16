@@ -5,19 +5,19 @@ declare var createjs: any
 
 const styles = require("./Home.sass")
 
-interface IProps {
+interface Props {
   loaded: boolean
 }
 
-interface IState {
+interface State {
   isFullWidth: boolean
 }
 
-class HomeComponent extends Component<IProps, IState> {
+class HomeComponent extends Component<Props, State> {
   private $canvas: HTMLDivElement | null
   private background: string
 
-  constructor(props: IProps) {
+  constructor(props: Props) {
     super(props)
 
     this.state = {
