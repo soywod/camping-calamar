@@ -1,4 +1,4 @@
-# Camping Calamar front [![Build Status](https://travis-ci.org/soywod/camping-calamar-front.svg?branch=master)](https://travis-ci.org/soywod/camping-calamar-front)
+# Camping Calamar front [![Build Status](https://travis-ci.org/soywod/camping-calamar.svg?branch=master)](https://travis-ci.org/soywod/camping-calamar)
 
 ## Prerequisites
 
